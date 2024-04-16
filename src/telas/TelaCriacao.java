@@ -43,17 +43,17 @@ public class TelaCriacao {
 	}
 
 	public TelaCriacao() {
-		classeImagens = new ImageIcon[] { new ImageIcon(TelaCriacao.class.getResource("/telas/bandido.png")),
-				new ImageIcon(TelaCriacao.class.getResource("/telas/barbaro.png")),
-				new ImageIcon(TelaCriacao.class.getResource("/telas/guerreiro.png")),
-				new ImageIcon(TelaCriacao.class.getResource("/telas/mago.png")),
-				new ImageIcon(TelaCriacao.class.getResource("/telas/necromante.png")) };
+		classeImagens = new ImageIcon[] { new ImageIcon(TelaCriacao.class.getResource("/imagens/bandido.png")),
+				new ImageIcon(TelaCriacao.class.getResource("/imagens/barbaro.png")),
+				new ImageIcon(TelaCriacao.class.getResource("/imagens/guerreiro.png")),
+				new ImageIcon(TelaCriacao.class.getResource("/imagens/mago.png")),
+				new ImageIcon(TelaCriacao.class.getResource("/imagens/necromante.png")) };
 		initialize();
 	}
 
 	private void initialize() {
 		frmCriaoDeHeri = new JFrame();
-		frmCriaoDeHeri.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaCriacao.class.getResource("/telas/IconNecromante.png")));
+		frmCriaoDeHeri.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaCriacao.class.getResource("/imagens/IconNecromante.png")));
 		frmCriaoDeHeri.setTitle("Criação do herói");
 		frmCriaoDeHeri.getContentPane().setBackground(Color.DARK_GRAY);
 		frmCriaoDeHeri.setBackground(new Color(240, 240, 240));
@@ -75,7 +75,7 @@ public class TelaCriacao {
 		frmCriaoDeHeri.getContentPane().add(slider);
 
 		JLabel imagemLabel = new JLabel("");
-		imagemLabel.setIcon(new ImageIcon(TelaCriacao.class.getResource("/telas/guerreiro.png")));
+		imagemLabel.setIcon(new ImageIcon(TelaCriacao.class.getResource("/imagens/guerreiro.png")));
 		imagemLabel.setBounds(42, 35, 175, 188);
 		frmCriaoDeHeri.getContentPane().add(imagemLabel);
 
