@@ -58,7 +58,7 @@ public class TelaBackground {
 		
 		JLabel lblNewLabel_1 = new JLabel("Origem:");
 		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setFont(new Font("Marcellus SC", Font.PLAIN, 14));
+		lblNewLabel_1.setFont(new Font("Papyrus", Font.PLAIN, 14));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_1.setBounds(11, 11, 65, 14);
 		frmBackgroundDoHeri.getContentPane().add(lblNewLabel_1);
@@ -136,7 +136,7 @@ public class TelaBackground {
 		
 		JLabel lblNewLabel_3 = new JLabel("Motivações:");
 		lblNewLabel_3.setForeground(Color.WHITE);
-		lblNewLabel_3.setFont(new Font("Marcellus SC", Font.PLAIN, 14));
+		lblNewLabel_3.setFont(new Font("Papyrus", Font.PLAIN, 14));
 		lblNewLabel_3.setBounds(339, 11, 83, 14);
 		frmBackgroundDoHeri.getContentPane().add(lblNewLabel_3);
 		
@@ -144,7 +144,7 @@ public class TelaBackground {
 		chckbxNewCheckBox_1.setHorizontalTextPosition(SwingConstants.LEFT);
 		chckbxNewCheckBox_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		chckbxNewCheckBox_1.setForeground(Color.LIGHT_GRAY);
-		chckbxNewCheckBox_1.setFont(new Font("Marcellus SC", Font.PLAIN, 13));
+		chckbxNewCheckBox_1.setFont(new Font("Papyrus", Font.PLAIN, 13));
 		chckbxNewCheckBox_1.setBackground(Color.DARK_GRAY);
 		chckbxNewCheckBox_1.setBounds(325, 39, 97, 23);
 		frmBackgroundDoHeri.getContentPane().add(chckbxNewCheckBox_1);
@@ -153,7 +153,7 @@ public class TelaBackground {
 		chckbxNewCheckBox.setHorizontalTextPosition(SwingConstants.LEFT);
 		chckbxNewCheckBox.setHorizontalAlignment(SwingConstants.RIGHT);
 		chckbxNewCheckBox.setForeground(Color.LIGHT_GRAY);
-		chckbxNewCheckBox.setFont(new Font("Marcellus SC", Font.PLAIN, 13));
+		chckbxNewCheckBox.setFont(new Font("Papyrus", Font.PLAIN, 13));
 		chckbxNewCheckBox.setBackground(Color.DARK_GRAY);
 		chckbxNewCheckBox.setBounds(325, 69, 97, 23);
 		frmBackgroundDoHeri.getContentPane().add(chckbxNewCheckBox);
@@ -162,7 +162,7 @@ public class TelaBackground {
 		chckbxVingana.setHorizontalTextPosition(SwingConstants.LEFT);
 		chckbxVingana.setHorizontalAlignment(SwingConstants.RIGHT);
 		chckbxVingana.setForeground(Color.LIGHT_GRAY);
-		chckbxVingana.setFont(new Font("Marcellus SC", Font.PLAIN, 13));
+		chckbxVingana.setFont(new Font("Papyrus", Font.PLAIN, 13));
 		chckbxVingana.setBackground(Color.DARK_GRAY);
 		chckbxVingana.setBounds(325, 99, 97, 23);
 		frmBackgroundDoHeri.getContentPane().add(chckbxVingana);
@@ -171,7 +171,7 @@ public class TelaBackground {
 		chckbxComida.setHorizontalTextPosition(SwingConstants.LEFT);
 		chckbxComida.setHorizontalAlignment(SwingConstants.RIGHT);
 		chckbxComida.setForeground(Color.LIGHT_GRAY);
-		chckbxComida.setFont(new Font("Marcellus SC", Font.PLAIN, 13));
+		chckbxComida.setFont(new Font("Papyrus", Font.PLAIN, 13));
 		chckbxComida.setBackground(Color.DARK_GRAY);
 		chckbxComida.setBounds(325, 129, 97, 23);
 		frmBackgroundDoHeri.getContentPane().add(chckbxComida);
@@ -180,7 +180,7 @@ public class TelaBackground {
 		chckbxConhecimento.setHorizontalTextPosition(SwingConstants.LEFT);
 		chckbxConhecimento.setHorizontalAlignment(SwingConstants.RIGHT);
 		chckbxConhecimento.setForeground(Color.LIGHT_GRAY);
-		chckbxConhecimento.setFont(new Font("Marcellus SC", Font.PLAIN, 13));
+		chckbxConhecimento.setFont(new Font("Papyrus", Font.PLAIN, 13));
 		chckbxConhecimento.setBackground(Color.DARK_GRAY);
 		chckbxConhecimento.setBounds(298, 159, 124, 23);
 		frmBackgroundDoHeri.getContentPane().add(chckbxConhecimento);
@@ -189,7 +189,7 @@ public class TelaBackground {
 		nenhumaCheck.setHorizontalTextPosition(SwingConstants.LEFT);
 		nenhumaCheck.setHorizontalAlignment(SwingConstants.RIGHT);
 		nenhumaCheck.setForeground(Color.LIGHT_GRAY);
-		nenhumaCheck.setFont(new Font("Marcellus SC", Font.PLAIN, 13));
+		nenhumaCheck.setFont(new Font("Papyrus", Font.PLAIN, 13));
 		nenhumaCheck.setBackground(Color.DARK_GRAY);
 		nenhumaCheck.setBounds(325, 189, 97, 23);
 		frmBackgroundDoHeri.getContentPane().add(nenhumaCheck);
@@ -221,7 +221,7 @@ public class TelaBackground {
 		btnNewButton_1_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnNewButton_1_1.setBorder(null);
 		btnNewButton_1_1.setBackground(Color.LIGHT_GRAY);
-		btnNewButton_1_1.setFont(new Font("Marcellus SC", Font.BOLD, 12));
+		btnNewButton_1_1.setFont(new Font("Papyrus", Font.BOLD, 12));
 		btnNewButton_1_1.setBounds(12, 226, 109, 23);
 		frmBackgroundDoHeri.getContentPane().add(btnNewButton_1_1);
 		
@@ -234,7 +234,7 @@ public class TelaBackground {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_1.setFont(new Font("Marcellus SC", Font.BOLD, 12));
+		btnNewButton_1.setFont(new Font("Papyrus", Font.BOLD, 12));
 		btnNewButton_1.setBounds(136, 226, 288, 23);
 		frmBackgroundDoHeri.getContentPane().add(btnNewButton_1);
 		
