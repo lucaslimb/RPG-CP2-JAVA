@@ -232,8 +232,20 @@ public class TelaCriacao {
 			btnNewButton.setBorder(null);
 			btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnNewButton.setFont(new Font("Marcellus SC", Font.BOLD, 11));
-			btnNewButton.setBounds(289, 227, 101, 23);
+			btnNewButton.setBounds(334, 227, 75, 23);
 			frmCriaoDeHeri.getContentPane().add(btnNewButton);
+			
+			JButton btnVoltar = new JButton("Voltar");
+			btnVoltar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnVoltar.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				}
+			});
+			btnVoltar.setFont(new Font("Dialog", Font.BOLD, 11));
+			btnVoltar.setBorder(null);
+			btnVoltar.setBackground(Color.LIGHT_GRAY);
+			btnVoltar.setBounds(268, 227, 59, 23);
+			frmCriaoDeHeri.getContentPane().add(btnVoltar);
 			
 			btnNewButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {

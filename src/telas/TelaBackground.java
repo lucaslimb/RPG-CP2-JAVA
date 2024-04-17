@@ -23,7 +23,6 @@ import javax.swing.JTextArea;
 public class TelaBackground {
 
 	private JFrame frmBackgroundDoHeri;
-	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -57,55 +56,42 @@ public class TelaBackground {
 		frmBackgroundDoHeri.getContentPane().setBackground(Color.DARK_GRAY);
 		frmBackgroundDoHeri.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Nome do herói:");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel.setFont(new Font("Marcellus SC", Font.PLAIN, 14));
-		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setBounds(11, 8, 140, 14);
-		frmBackgroundDoHeri.getContentPane().add(lblNewLabel);
-		
-		textField = new JTextField();
-		textField.setFont(new Font("Marcellus SC", Font.PLAIN, 11));
-		textField.setBounds(10, 25, 287, 14);
-		frmBackgroundDoHeri.getContentPane().add(textField);
-		textField.setColumns(10);
-		
 		JLabel lblNewLabel_1 = new JLabel("Origem:");
 		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setFont(new Font("Marcellus SC", Font.PLAIN, 14));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_1.setBounds(10, 45, 65, 14);
+		lblNewLabel_1.setBounds(11, 11, 65, 14);
 		frmBackgroundDoHeri.getContentPane().add(lblNewLabel_1);
 		
 		JRadioButton origem1RB = new JRadioButton("");
 		origem1RB.setSelected(true);
 		origem1RB.setBackground(Color.DARK_GRAY);
 		origem1RB.setHorizontalAlignment(SwingConstants.CENTER);
-		origem1RB.setBounds(80, 46, 15, 14);
+		origem1RB.setBounds(81, 12, 15, 14);
 		frmBackgroundDoHeri.getContentPane().add(origem1RB);
 		
 		JRadioButton origem2RB = new JRadioButton("");
 		origem2RB.setHorizontalAlignment(SwingConstants.CENTER);
 		origem2RB.setBackground(Color.DARK_GRAY);
-		origem2RB.setBounds(130, 46, 15, 14);
+		origem2RB.setBounds(131, 12, 15, 14);
 		frmBackgroundDoHeri.getContentPane().add(origem2RB);
 		
 		JRadioButton origem3RB = new JRadioButton("");
 		origem3RB.setHorizontalAlignment(SwingConstants.CENTER);
 		origem3RB.setBackground(Color.DARK_GRAY);
-		origem3RB.setBounds(180, 46, 15, 14);
+		origem3RB.setBounds(181, 12, 15, 14);
 		frmBackgroundDoHeri.getContentPane().add(origem3RB);
 		
 		JRadioButton origem4RB = new JRadioButton("");
 		origem4RB.setHorizontalAlignment(SwingConstants.CENTER);
 		origem4RB.setBackground(Color.DARK_GRAY);
-		origem4RB.setBounds(230, 46, 15, 14);
+		origem4RB.setBounds(231, 12, 15, 14);
 		frmBackgroundDoHeri.getContentPane().add(origem4RB);
 		
 		JRadioButton origem5RB = new JRadioButton("");
 		origem5RB.setHorizontalAlignment(SwingConstants.CENTER);
 		origem5RB.setBackground(Color.DARK_GRAY);
-		origem5RB.setBounds(280, 45, 15, 14);
+		origem5RB.setBounds(281, 11, 15, 14);
 		frmBackgroundDoHeri.getContentPane().add(origem5RB);
 		
 		ButtonGroup buttonGroup = new ButtonGroup();
@@ -119,7 +105,7 @@ public class TelaBackground {
 		origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem.jpg")));
 		origemLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		origemLabel.setForeground(Color.BLACK);
-		origemLabel.setBounds(11, 67, 285, 145);
+		origemLabel.setBounds(11, 39, 285, 173);
 		frmBackgroundDoHeri.getContentPane().add(origemLabel);
 		
 		origem1RB.addActionListener(new ActionListener() {
@@ -151,7 +137,7 @@ public class TelaBackground {
 		JLabel lblNewLabel_3 = new JLabel("Motivações:");
 		lblNewLabel_3.setForeground(Color.WHITE);
 		lblNewLabel_3.setFont(new Font("Marcellus SC", Font.PLAIN, 14));
-		lblNewLabel_3.setBounds(339, 8, 83, 14);
+		lblNewLabel_3.setBounds(339, 11, 83, 14);
 		frmBackgroundDoHeri.getContentPane().add(lblNewLabel_3);
 		
 		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Família");
