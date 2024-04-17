@@ -17,6 +17,10 @@ import javax.swing.event.ChangeListener;
 import java.awt.Font;
 import java.awt.Cursor;
 import java.awt.Toolkit;
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
@@ -26,6 +30,7 @@ import javax.swing.UIManager;
 public class TelaCriacao {
 
 	private JFrame frmCriaoDeHeri;
+	private JFrame frmBackgroundDoHeri;
 	private String classeNomes[] = { "Bandido", "Bárbaro", "Guerreiro", "Mago", "Necromante" };
 	private ImageIcon classeImagens[];
 
@@ -141,14 +146,6 @@ public class TelaCriacao {
 		spinnerV.setBounds(371, 172, 39, 20);
 		frmCriaoDeHeri.getContentPane().add(spinnerV);
 
-		JButton btnNewButton = new JButton("Confirmar");
-		btnNewButton.setBackground(Color.LIGHT_GRAY);
-		btnNewButton.setBorder(null);
-		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnNewButton.setFont(new Font("Marcellus SC", Font.BOLD, 11));
-		btnNewButton.setBounds(289, 227, 101, 23);
-		frmCriaoDeHeri.getContentPane().add(btnNewButton);
-
 		JLabel lblFora = new JLabel("Força");
 		lblFora.setToolTipText("Relacionado a força bruta de ataque.");
 		lblFora.setFont(new Font("Marcellus SC", Font.PLAIN, 12));
@@ -193,7 +190,7 @@ public class TelaCriacao {
 
 		JLabel pontosLabel = new JLabel("Pontos disponíveis: 50");
 		pontosLabel.setFont(new Font("Marcellus SC", Font.BOLD, 13));
-		pontosLabel.setForeground(Color.LIGHT_GRAY);
+		pontosLabel.setForeground(Color.WHITE);
 		pontosLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		pontosLabel.setBounds(270, 201, 140, 14);
 		frmCriaoDeHeri.getContentPane().add(pontosLabel);
@@ -229,6 +226,20 @@ public class TelaCriacao {
 	        spinnerV.addChangeListener(spinnerListener);
 
 	        frmCriaoDeHeri.setVisible(true);
+	        
+	        JButton btnNewButton = new JButton("Continuar");
+			btnNewButton.setBackground(Color.LIGHT_GRAY);
+			btnNewButton.setBorder(null);
+			btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnNewButton.setFont(new Font("Marcellus SC", Font.BOLD, 11));
+			btnNewButton.setBounds(289, 227, 101, 23);
+			frmCriaoDeHeri.getContentPane().add(btnNewButton);
+			
+			btnNewButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+			
+				}
+			});
 	    
 	}
 }

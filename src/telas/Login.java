@@ -79,7 +79,7 @@ public class Login {
 		frameLogin.getContentPane().setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("Login");
-		lblNewLabel.setForeground(Color.LIGHT_GRAY);
+		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Marcellus SC", Font.PLAIN, 18));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(10, 11, 319, 22);
