@@ -87,7 +87,7 @@ public class TelaInicio {
 		frmInicio.getContentPane().add(rdbtnOgro);
 		
 		JRadioButton rdbtnElfo = new JRadioButton("Elfo");
-		rdbtnElfo.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		rdbtnElfo.setFont(new Font("Papyrus", Font.PLAIN, 13));
 		rdbtnElfo.setHorizontalAlignment(SwingConstants.LEFT);
 		rdbtnElfo.setForeground(Color.LIGHT_GRAY);
 		rdbtnElfo.setBackground(Color.DARK_GRAY);
@@ -95,7 +95,7 @@ public class TelaInicio {
 		frmInicio.getContentPane().add(rdbtnElfo);
 		
 		JRadioButton rdbtnAno = new JRadioButton("Anão");
-		rdbtnAno.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		rdbtnAno.setFont(new Font("Papyrus", Font.PLAIN, 13));
 		rdbtnAno.setHorizontalAlignment(SwingConstants.LEFT);
 		rdbtnAno.setForeground(Color.LIGHT_GRAY);
 		rdbtnAno.setBackground(Color.DARK_GRAY);
@@ -103,7 +103,7 @@ public class TelaInicio {
 		frmInicio.getContentPane().add(rdbtnAno);
 		
 		JRadioButton rdbtnDemnio = new JRadioButton("Demônio");
-		rdbtnDemnio.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		rdbtnDemnio.setFont(new Font("Papyrus", Font.PLAIN, 13));
 		rdbtnDemnio.setHorizontalAlignment(SwingConstants.LEFT);
 		rdbtnDemnio.setForeground(Color.LIGHT_GRAY);
 		rdbtnDemnio.setBackground(Color.DARK_GRAY);
@@ -113,14 +113,14 @@ public class TelaInicio {
 		JButton btnNewButton = new JButton("Voltar");
 		btnNewButton.setBackground(Color.LIGHT_GRAY);
 		btnNewButton.setBorder(null);
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnNewButton.setFont(new Font("Papyrus", Font.BOLD, 12));
 		btnNewButton.setBounds(12, 226, 109, 23);
 		frmInicio.getContentPane().add(btnNewButton);
 		
 		JButton btnContinuar = new JButton("Continuar");
 		btnContinuar.setBackground(Color.LIGHT_GRAY);
 		btnContinuar.setBorder(null);
-		btnContinuar.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnContinuar.setFont(new Font("Papyrus", Font.BOLD, 12));
 		btnContinuar.setBounds(136, 226, 288, 23);
 		frmInicio.getContentPane().add(btnContinuar);
 		
@@ -141,14 +141,14 @@ public class TelaInicio {
 		JLabel lblFem = new JLabel("Fem");
 		lblFem.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblFem.setForeground(Color.LIGHT_GRAY);
-		lblFem.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblFem.setFont(new Font("Papyrus", Font.PLAIN, 11));
 		lblFem.setBounds(148, 105, 52, 14);
 		frmInicio.getContentPane().add(lblFem);
 		
 		JLabel lblMasc = new JLabel("Masc");
 		lblMasc.setHorizontalAlignment(SwingConstants.LEFT);
 		lblMasc.setForeground(Color.LIGHT_GRAY);
-		lblMasc.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblMasc.setFont(new Font("Papyrus", Font.PLAIN, 11));
 		lblMasc.setBounds(355, 105, 52, 14);
 		frmInicio.getContentPane().add(lblMasc);
 		
