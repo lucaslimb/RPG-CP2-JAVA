@@ -52,7 +52,7 @@ public class TelaInicio {
 		JLabel lblNomeDoHeri = new JLabel("Nome do herói:");
 		lblNomeDoHeri.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNomeDoHeri.setForeground(Color.WHITE);
-		lblNomeDoHeri.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNomeDoHeri.setFont(new Font("Papyrus", Font.PLAIN, 14));
 		lblNomeDoHeri.setBounds(10, 11, 137, 14);
 		frmInicio.getContentPane().add(lblNomeDoHeri);
 		
@@ -64,11 +64,12 @@ public class TelaInicio {
 		JLabel lblRaa = new JLabel("Raça:");
 		lblRaa.setHorizontalAlignment(SwingConstants.LEFT);
 		lblRaa.setForeground(Color.WHITE);
-		lblRaa.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblRaa.setFont(new Font("Papyrus", Font.PLAIN, 14));
 		lblRaa.setBounds(10, 63, 137, 14);
 		frmInicio.getContentPane().add(lblRaa);
 		
 		JRadioButton rdbtnHumano = new JRadioButton("Humano");
+		rdbtnHumano.setFont(new Font("Papyrus", Font.PLAIN, 13));
 		rdbtnHumano.setSelected(true);
 		rdbtnHumano.setHorizontalAlignment(SwingConstants.LEFT);
 		rdbtnHumano.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -78,6 +79,7 @@ public class TelaInicio {
 		frmInicio.getContentPane().add(rdbtnHumano);
 		
 		JRadioButton rdbtnOgro = new JRadioButton("Ogro");
+		rdbtnOgro.setFont(new Font("Papyrus", Font.PLAIN, 13));
 		rdbtnOgro.setHorizontalAlignment(SwingConstants.LEFT);
 		rdbtnOgro.setForeground(Color.LIGHT_GRAY);
 		rdbtnOgro.setBackground(Color.DARK_GRAY);
@@ -85,6 +87,7 @@ public class TelaInicio {
 		frmInicio.getContentPane().add(rdbtnOgro);
 		
 		JRadioButton rdbtnElfo = new JRadioButton("Elfo");
+		rdbtnElfo.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		rdbtnElfo.setHorizontalAlignment(SwingConstants.LEFT);
 		rdbtnElfo.setForeground(Color.LIGHT_GRAY);
 		rdbtnElfo.setBackground(Color.DARK_GRAY);
@@ -92,6 +95,7 @@ public class TelaInicio {
 		frmInicio.getContentPane().add(rdbtnElfo);
 		
 		JRadioButton rdbtnAno = new JRadioButton("Anão");
+		rdbtnAno.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		rdbtnAno.setHorizontalAlignment(SwingConstants.LEFT);
 		rdbtnAno.setForeground(Color.LIGHT_GRAY);
 		rdbtnAno.setBackground(Color.DARK_GRAY);
@@ -99,6 +103,7 @@ public class TelaInicio {
 		frmInicio.getContentPane().add(rdbtnAno);
 		
 		JRadioButton rdbtnDemnio = new JRadioButton("Demônio");
+		rdbtnDemnio.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		rdbtnDemnio.setHorizontalAlignment(SwingConstants.LEFT);
 		rdbtnDemnio.setForeground(Color.LIGHT_GRAY);
 		rdbtnDemnio.setBackground(Color.DARK_GRAY);
@@ -129,7 +134,7 @@ public class TelaInicio {
 		JLabel lblGnero = new JLabel("Gênero:");
 		lblGnero.setHorizontalAlignment(SwingConstants.CENTER);
 		lblGnero.setForeground(Color.WHITE);
-		lblGnero.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblGnero.setFont(new Font("Papyrus", Font.PLAIN, 14));
 		lblGnero.setBounds(208, 63, 137, 14);
 		frmInicio.getContentPane().add(lblGnero);
 		
