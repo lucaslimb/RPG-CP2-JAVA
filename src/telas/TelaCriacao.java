@@ -71,7 +71,7 @@ public class TelaCriacao {
 		slider.setBorder(null);
 		slider.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		slider.setBackground(Color.DARK_GRAY);
-		slider.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		slider.setFont(new Font("Papyrus", Font.PLAIN, 11));
 		slider.setForeground(Color.DARK_GRAY);
 		slider.setValue(2);
 		slider.setMinimum(0);
@@ -148,48 +148,48 @@ public class TelaCriacao {
 
 		JLabel lblFora = new JLabel("Força");
 		lblFora.setToolTipText("Relacionado a força bruta de ataque.");
-		lblFora.setFont(new Font("Marcellus SC", Font.PLAIN, 12));
+		lblFora.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		lblFora.setForeground(Color.LIGHT_GRAY);
 		lblFora.setBounds(270, 22, 68, 14);
 		frmCriaoDeHeri.getContentPane().add(lblFora);
 
 		JLabel lblNewLabel_1_1 = new JLabel("Agilidade");
 		lblNewLabel_1_1.setToolTipText("Relacionado a velocidade de movimento.");
-		lblNewLabel_1_1.setFont(new Font("Marcellus SC", Font.PLAIN, 12));
+		lblNewLabel_1_1.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		lblNewLabel_1_1.setForeground(Color.LIGHT_GRAY);
 		lblNewLabel_1_1.setBounds(270, 52, 76, 14);
 		frmCriaoDeHeri.getContentPane().add(lblNewLabel_1_1);
 
 		JLabel lblNewLabel_1_2 = new JLabel("Inteligência");
 		lblNewLabel_1_2.setToolTipText("Relacionado ao raciocínio lógico.");
-		lblNewLabel_1_2.setFont(new Font("Marcellus SC", Font.PLAIN, 12));
+		lblNewLabel_1_2.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		lblNewLabel_1_2.setForeground(Color.LIGHT_GRAY);
 		lblNewLabel_1_2.setBounds(270, 82, 76, 14);
 		frmCriaoDeHeri.getContentPane().add(lblNewLabel_1_2);
 
 		JLabel lblNewLabel_1_3 = new JLabel("Magia");
 		lblNewLabel_1_3.setToolTipText("Relacionado aos conhecimentos mágicos.");
-		lblNewLabel_1_3.setFont(new Font("Marcellus SC", Font.PLAIN, 12));
+		lblNewLabel_1_3.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		lblNewLabel_1_3.setForeground(Color.LIGHT_GRAY);
 		lblNewLabel_1_3.setBounds(270, 112, 68, 14);
 		frmCriaoDeHeri.getContentPane().add(lblNewLabel_1_3);
 
 		JLabel lblNewLabel_1_4 = new JLabel("Destreza");
 		lblNewLabel_1_4.setToolTipText("Relacionada a habilidade técnica.");
-		lblNewLabel_1_4.setFont(new Font("Marcellus SC", Font.PLAIN, 12));
+		lblNewLabel_1_4.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		lblNewLabel_1_4.setForeground(Color.LIGHT_GRAY);
 		lblNewLabel_1_4.setBounds(270, 142, 68, 14);
 		frmCriaoDeHeri.getContentPane().add(lblNewLabel_1_4);
 
 		JLabel lblNewLabel_1_5 = new JLabel("Vida");
 		lblNewLabel_1_5.setToolTipText("Relacionado com a vida máxima");
-		lblNewLabel_1_5.setFont(new Font("Marcellus SC", Font.PLAIN, 12));
+		lblNewLabel_1_5.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		lblNewLabel_1_5.setForeground(Color.LIGHT_GRAY);
 		lblNewLabel_1_5.setBounds(270, 172, 68, 14);
 		frmCriaoDeHeri.getContentPane().add(lblNewLabel_1_5);
 
 		JLabel pontosLabel = new JLabel("Pontos disponíveis: 50");
-		pontosLabel.setFont(new Font("Marcellus SC", Font.BOLD, 13));
+		pontosLabel.setFont(new Font("Papyrus", Font.BOLD, 13));
 		pontosLabel.setForeground(Color.WHITE);
 		pontosLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		pontosLabel.setBounds(270, 201, 140, 14);
@@ -231,7 +231,7 @@ public class TelaCriacao {
 			btnNewButton.setBackground(Color.LIGHT_GRAY);
 			btnNewButton.setBorder(null);
 			btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnNewButton.setFont(new Font("Marcellus SC", Font.BOLD, 11));
+			btnNewButton.setFont(new Font("Papyrus", Font.BOLD, 11));
 			btnNewButton.setBounds(334, 227, 75, 23);
 			frmCriaoDeHeri.getContentPane().add(btnNewButton);
 			
