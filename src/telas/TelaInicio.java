@@ -28,8 +28,13 @@ import javax.swing.ImageIcon;
 public class TelaInicio {
 
 	private JFrame frmInicio;
-	private JTextField textField;
-
+	private JTextField txtNomeHeroi;
+	private static String nomeHeroi;
+	public static String getNomeHeroi() {
+		return nomeHeroi;
+	}
+	
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -61,10 +66,16 @@ public class TelaInicio {
 		lblNomeDoHeri.setBounds(156, 8, 120, 18);
 		frmInicio.getContentPane().add(lblNomeDoHeri);
 		
-		textField = new JTextField();
-		textField.setBounds(9, 34, 414, 20);
-		frmInicio.getContentPane().add(textField);
-		textField.setColumns(10);
+		txtNomeHeroi = new JTextField();
+		txtNomeHeroi.setBounds(9, 34, 414, 20);
+		frmInicio.getContentPane().add(txtNomeHeroi);
+		txtNomeHeroi.setColumns(10);
+		
+		txtNomeHeroi.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                nomeHeroi = txtNomeHeroi.getText();
+            }
+        });
 		
 		JLabel lblRaa = new JLabel("Raça");
 		lblRaa.setHorizontalAlignment(SwingConstants.CENTER);
@@ -217,7 +228,7 @@ public class TelaInicio {
 		btnVoltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frmInicio.dispose();
-                new Registro();
+                Login.main(null);
             }
         });
 		
@@ -232,11 +243,12 @@ public class TelaInicio {
 		btnContinuar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frmInicio.dispose();
-                new TelaCriacao();
+                TelaCriacao.main(null);
             }
         });
 		
 		frmInicio.setVisible(true);
 		
 	}
+
 }

@@ -50,7 +50,7 @@ public class TelaCriacao {
 	public TelaCriacao() {
 		classeImagens = new ImageIcon[] { new ImageIcon(TelaCriacao.class.getResource("/imagens/bandido.png")),
 				new ImageIcon(TelaCriacao.class.getResource("/imagens/barbaro.png")),
-				new ImageIcon(TelaCriacao.class.getResource("/imagens/guerreiro.png")),
+				new ImageIcon(TelaCriacao.class.getResource("/imagens/guerreiro1.png")),
 				new ImageIcon(TelaCriacao.class.getResource("/imagens/mago.png")),
 				new ImageIcon(TelaCriacao.class.getResource("/imagens/necromante.png")) };
 		initialize();
@@ -79,7 +79,7 @@ public class TelaCriacao {
 		frmCriarHeroi.getContentPane().add(slider);
 
 		JLabel imagemLabel = new JLabel("");
-		imagemLabel.setIcon(new ImageIcon(TelaCriacao.class.getResource("/imagens/guerreiro.png")));
+		imagemLabel.setIcon(new ImageIcon(TelaCriacao.class.getResource("/imagens/guerreiro1.png")));
 		imagemLabel.setBounds(42, 35, 175, 188);
 		frmCriarHeroi.getContentPane().add(imagemLabel);
 
@@ -241,7 +241,7 @@ public class TelaCriacao {
 			btnNewButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					 frmCriarHeroi.dispose();
-		             new TelaBackground();
+		             TelaBackground.main(null);
 				}
 			});
 			
@@ -250,7 +250,7 @@ public class TelaCriacao {
 			btnVoltar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					 frmCriarHeroi.dispose();
-		             new TelaInicio();
+		             TelaInicio.main(null);
 				}
 			});
 			btnVoltar.setFont(new Font("Papyrus", Font.BOLD, 11));
@@ -258,8 +258,6 @@ public class TelaCriacao {
 			btnVoltar.setBackground(Color.LIGHT_GRAY);
 			btnVoltar.setBounds(268, 227, 51, 23);
 			frmCriarHeroi.getContentPane().add(btnVoltar);
-			
-			
-	    
+
 	}
 }

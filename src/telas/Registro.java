@@ -16,6 +16,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JPasswordField;
+import java.awt.Toolkit;
 
 public class Registro {
 
@@ -80,6 +81,7 @@ public class Registro {
 	 */
 	private void initialize() {
 		frmRegistro = new JFrame();
+		frmRegistro.setIconImage(Toolkit.getDefaultToolkit().getImage(Registro.class.getResource("/imagens/IconNecromante.png")));
 		frmRegistro.getContentPane().setBackground(Color.DARK_GRAY);
 		frmRegistro.setTitle("Registro");
 		frmRegistro.setBounds(100, 100, 378, 300);

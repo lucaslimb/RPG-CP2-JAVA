@@ -148,6 +148,7 @@ public class TelaBackground {
 		frmBackgroundDoHeri.getContentPane().add(lblNewLabel_3);
 		
 		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Família");
+		chckbxNewCheckBox_1.setFocusPainted(false);
 		chckbxNewCheckBox_1.setHorizontalTextPosition(SwingConstants.LEFT);
 		chckbxNewCheckBox_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		chckbxNewCheckBox_1.setForeground(Color.LIGHT_GRAY);
@@ -157,6 +158,7 @@ public class TelaBackground {
 		frmBackgroundDoHeri.getContentPane().add(chckbxNewCheckBox_1);
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Poder");
+		chckbxNewCheckBox.setFocusPainted(false);
 		chckbxNewCheckBox.setHorizontalTextPosition(SwingConstants.LEFT);
 		chckbxNewCheckBox.setHorizontalAlignment(SwingConstants.RIGHT);
 		chckbxNewCheckBox.setForeground(Color.LIGHT_GRAY);
@@ -166,6 +168,7 @@ public class TelaBackground {
 		frmBackgroundDoHeri.getContentPane().add(chckbxNewCheckBox);
 		
 		JCheckBox chckbxVingana = new JCheckBox("Vingança");
+		chckbxVingana.setFocusPainted(false);
 		chckbxVingana.setHorizontalTextPosition(SwingConstants.LEFT);
 		chckbxVingana.setHorizontalAlignment(SwingConstants.RIGHT);
 		chckbxVingana.setForeground(Color.LIGHT_GRAY);
@@ -175,6 +178,7 @@ public class TelaBackground {
 		frmBackgroundDoHeri.getContentPane().add(chckbxVingana);
 		
 		JCheckBox chckbxComida = new JCheckBox("Alimento");
+		chckbxComida.setFocusPainted(false);
 		chckbxComida.setHorizontalTextPosition(SwingConstants.LEFT);
 		chckbxComida.setHorizontalAlignment(SwingConstants.RIGHT);
 		chckbxComida.setForeground(Color.LIGHT_GRAY);
@@ -184,6 +188,7 @@ public class TelaBackground {
 		frmBackgroundDoHeri.getContentPane().add(chckbxComida);
 		
 		JCheckBox chckbxConhecimento = new JCheckBox("Conhecimento");
+		chckbxConhecimento.setFocusPainted(false);
 		chckbxConhecimento.setHorizontalTextPosition(SwingConstants.LEFT);
 		chckbxConhecimento.setHorizontalAlignment(SwingConstants.RIGHT);
 		chckbxConhecimento.setForeground(Color.LIGHT_GRAY);
@@ -193,6 +198,7 @@ public class TelaBackground {
 		frmBackgroundDoHeri.getContentPane().add(chckbxConhecimento);
 		
 		JCheckBox nenhumaCheck = new JCheckBox("Nenhuma");
+		nenhumaCheck.setFocusPainted(false);
 		nenhumaCheck.setHorizontalTextPosition(SwingConstants.LEFT);
 		nenhumaCheck.setHorizontalAlignment(SwingConstants.RIGHT);
 		nenhumaCheck.setForeground(Color.LIGHT_GRAY);
@@ -235,7 +241,7 @@ public class TelaBackground {
 		btnNewButton_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frmBackgroundDoHeri.dispose();
-				new TelaCriacao();
+				TelaCriacao.main(null);
 			}
 		});
 		
@@ -246,11 +252,11 @@ public class TelaBackground {
 		btnNewButton_1.setBackground(Color.LIGHT_GRAY);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				
-				
+				frmBackgroundDoHeri.dispose();
+				TelaGeral.main(null);	
 			}
 		});
+		
 		btnNewButton_1.setFont(new Font("Papyrus", Font.BOLD, 12));
 		btnNewButton_1.setBounds(136, 226, 288, 23);
 		frmBackgroundDoHeri.getContentPane().add(btnNewButton_1);

@@ -147,7 +147,7 @@ public class Login {
 					if(senha.equals(senhaRegistro)) {
 						frameLogin.dispose();
 						frameLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-						TelaCriacao.main(null);
+						TelaInicio.main(null);
 					} else {
 						labelSenha.setText("Senha errada");
 					}
