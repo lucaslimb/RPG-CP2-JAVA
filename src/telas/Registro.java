@@ -1,29 +1,41 @@
 package telas;
+import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.EventQueue;
 import java.awt.Font;
-
-import javax.swing.JFrame;
-import java.awt.Label;
 import java.awt.TextField;
-import java.awt.Button;
-import java.awt.Color;
-
-import javax.swing.JButton;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
-import java.awt.event.ActionEvent;
-import javax.swing.JLabel;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import java.awt.Cursor;
+import javax.swing.JPasswordField;
 
 public class Registro {
 
 	private JFrame frmRegistro;
 	private JFrame frameLogin;
-	private String email, senha, confirmaSenha, nome, senhaRegistro, emailRegistro;
+	private static String senhaRegistro;
+	private String confirmaSenha;
+	private String nome;
+	private static String emailRegistro;
+	
+	public static String getSenhaRegistro() {
+		return senhaRegistro;
+	}
+
+	public static String getEmailRegistro() {
+		return emailRegistro;
+	}
+
+	private JPasswordField passwordField_Senha;
+	private JPasswordField passwordField_ConfirmaSenha;
 
 	/**
 	 * Launch the application.
@@ -70,17 +82,11 @@ public class Registro {
 		frmRegistro = new JFrame();
 		frmRegistro.getContentPane().setBackground(Color.DARK_GRAY);
 		frmRegistro.setTitle("Registro");
-		/*frmRegistro.addWindowListener(new WindowAdapter() {
-			@Override
-			public void windowOpened(WindowEvent e) {
-				this.windowGainedFocus(e);
-			}
-		});*/
 		frmRegistro.setBounds(100, 100, 378, 300);
 		frmRegistro.getContentPane().setLayout(null);
 
 		TextField txtEmail = new TextField();
-		txtEmail.setBounds(10, 32, 342, 22);
+		txtEmail.setBounds(10, 82, 342, 22);
 		frmRegistro.getContentPane().add(txtEmail);
 
 		JLabel labelConfirmaSenha = new JLabel("Confirmar senha");
@@ -90,28 +96,17 @@ public class Registro {
 		frmRegistro.getContentPane().add(labelConfirmaSenha);
 
 		TextField txtNome = new TextField();
-		txtNome.setBounds(10, 82, 342, 22);
+		txtNome.setBounds(10, 31, 342, 22);
 		frmRegistro.getContentPane().add(txtNome);
-
-		TextField txtSenha = new TextField();
-		txtSenha.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusGained(FocusEvent e) {
-				txtSenha.setEchoChar('*');
-			}
-		});
-		txtSenha.setBounds(10, 132, 342, 22);
-		frmRegistro.getContentPane().add(txtSenha);
-
-		TextField txtConfirmaSenha = new TextField();
-		txtConfirmaSenha.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusGained(FocusEvent e) {
-				txtConfirmaSenha.setEchoChar('*');
-			}
-		});
-		txtConfirmaSenha.setBounds(10, 180, 342, 22);
-		frmRegistro.getContentPane().add(txtConfirmaSenha);
+		
+		passwordField_Senha = new JPasswordField();
+		passwordField_Senha.setBounds(10, 129, 342, 20);
+		frmRegistro.getContentPane().add(passwordField_Senha);
+		
+		passwordField_ConfirmaSenha = new JPasswordField();
+		passwordField_ConfirmaSenha.setBounds(10, 181, 342, 20);
+		frmRegistro.getContentPane().add(passwordField_ConfirmaSenha);
+		frmRegistro.setVisible(true);
 
 		JButton btnRegistrar = new JButton("Registrar");
 		btnRegistrar.setBackground(Color.LIGHT_GRAY);
@@ -122,12 +117,12 @@ public class Registro {
 			public void actionPerformed(ActionEvent e) {
 				nome = txtNome.getText();
 				emailRegistro = txtEmail.getText();
-				senhaRegistro = txtSenha.getText();
-				confirmaSenha = txtConfirmaSenha.getText();
-				if (senhaRegistro.equals(confirmaSenha)) {
+				senhaRegistro = passwordField_Senha.getText();
+				confirmaSenha = passwordField_ConfirmaSenha.getText();
+				if (confirmaSenha.equals(senhaRegistro)) {
 					frmRegistro.dispose();
-					new Login();
-
+					frmRegistro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					Login.main(null);
 				} else {
 					labelConfirmaSenha.setText("Confirmar senha - não coincidem");
 				}
@@ -155,107 +150,8 @@ public class Registro {
 		labelNome.setHorizontalAlignment(SwingConstants.LEFT);
 		labelNome.setBounds(10, 11, 46, 14);
 		frmRegistro.getContentPane().add(labelNome);
-		frmRegistro.setVisible(true);
+		
+		
 	}
 }
 
-	/*void initializeLogin() {
-		frameLogin = new JFrame();
-		frameLogin.setBounds(100, 100, 355, 300);
-		frameLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frameLogin.getContentPane().setLayout(null);
-
-		JLabel labelLogin = new JLabel("Login");
-		labelLogin.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		labelLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		labelLogin.setBounds(10, 11, 319, 22);
-		frameLogin.getContentPane().add(labelLogin);
-
-		JLabel labelEmail = new JLabel("E-mail");
-		labelEmail.setBounds(10, 49, 46, 14);
-		frameLogin.getContentPane().add(labelEmail);
-
-		JLabel labelSenha = new JLabel("Senha");
-		labelSenha.setBounds(10, 101, 46, 14);
-		frameLogin.getContentPane().add(labelSenha);
-
-		TextField textField = new TextField();
-
-		textField.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusGained(FocusEvent e) {
-				if (textField.getText().equals("Senha")) {
-					textField.setText(null);
-					textField.requestFocus();
-					removePlaceholderStyle(textField);
-					
-				}
-				textField.setEchoChar('*');
-			}
-
-			@Override
-			public void focusLost(FocusEvent e) {
-				if (textField.getText().length() == 0) {
-					addPlaceholderStyle(textField);
-					textField.setText("Senha");
-					textField.setEchoChar('\u0000');
-				}
-			}
-		});
-
-		textField.setBounds(10, 121, 319, 22);
-		frameLogin.getContentPane().add(textField);
-
-		TextField textField_1 = new TextField();
-		textField_1.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusGained(FocusEvent e) {
-				if (textField_1.getText().equals("E-mail")) {
-					textField_1.setText(null);
-					textField_1.requestFocus();
-					removePlaceholderStyle(textField_1);
-				}
-			}
-
-			@Override
-			public void focusLost(FocusEvent e) {
-				if (textField_1.getText().length() == 0) {
-					addPlaceholderStyle(textField_1);
-					textField_1.setText("E-mail");
-				}
-
-			}
-		});
-		textField_1.setBounds(10, 69, 319, 22);
-		frameLogin.getContentPane().add(textField_1);
-
-		JButton btnNewButton = new JButton("Entrar");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				email = textField_1.getText();
-				senha = textField.getText();
-				if (email.equals(emailRegistro) && senha.equals(senhaRegistro)) {
-					btnNewButton.setText("Sucesso!");
-				} else {
-					btnNewButton.setText("Erro");
-				}
-			}
-		});
-		btnNewButton.setBounds(235, 227, 89, 23);
-		frameLogin.getContentPane().add(btnNewButton);
-
-		JButton btnNovoRegistro = new JButton("Registre-se");
-		btnNovoRegistro.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frameLogin.dispose();
-				frmRegistro.setBounds(100, 100, 378, 300);
-				frmRegistro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				frmRegistro.setVisible(true);
-			}
-		});
-		btnNovoRegistro.setBounds(10, 227, 113, 23);
-		frameLogin.getContentPane().add(btnNovoRegistro);
-		
-		frmRegistro.setVisible(true);
-	}
-}*/
