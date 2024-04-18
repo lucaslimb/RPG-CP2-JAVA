@@ -115,12 +115,14 @@ public class TelaGeral {
 			 numMtv = "sobretudo";
 		 
 		JTextArea textoHeroi = new JTextArea();
+		textoHeroi.setWrapStyleWord(true);
+		textoHeroi.setFocusable(false);
 		textoHeroi.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 		textoHeroi.setForeground(Color.LIGHT_GRAY);
 		textoHeroi.setLineWrap(true);
 		textoHeroi.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		textoHeroi.setText("Motivado " + numMtv + " " + motivo + ", o " + raca + " " + classe.toLowerCase() + 
-				" conhecido como " + nome + ", abandonou " + origem + " e veio a este Mundo para se erguer como uma lenda, ou cair no eterno esquecimento");
+				" conhecido como " + nome + ", deixou " + origem + " e veio a este Mundo para se erguer como uma lenda, ou cair no eterno esquecimento");
 		textoHeroi.setEditable(false);
 		textoHeroi.setBackground(Color.DARK_GRAY);
 		textoHeroi.setBounds(300, 11, 123, 201);
