@@ -179,7 +179,7 @@ public class Login {
 		JLabel labelTitulo = new JLabel("BuildMaker");
 		labelTitulo.setHorizontalAlignment(SwingConstants.CENTER);
 		labelTitulo.setForeground(Color.RED);
-		labelTitulo.setFont(new Font("Papyrus", Font.BOLD | Font.ITALIC, 23));
+		labelTitulo.setFont(new Font("Papyrus", Font.BOLD, 23));
 		labelTitulo.setBounds(10, 11, 319, 32);
 		frameLogin.getContentPane().add(labelTitulo);
 		

@@ -23,10 +23,37 @@ import javax.swing.JTextArea;
 public class TelaBackground {
 
 	private JFrame frmBackgroundDoHeri;
-
-	/**
-	 * Launch the application.
-	 */
+	private static String escolhaOrigem;
+	private static String mtvF;
+	private static String mtvP;
+	private static String mtvV;
+	private static String mtvA;
+	private static String mtvC;
+	private static String mtvN;
+	
+	static String getEscolhaOrigem() {
+		return escolhaOrigem;
+	}
+	
+	static String getMtvF() {
+		return mtvF;
+	}
+	static String getMtvP() {
+		return mtvP;
+	}
+	static String getMtvV() {
+		return mtvV;
+	}
+	static String getMtvA() {
+		return mtvA;
+	}
+	static String getMtvC() {
+		return mtvC;
+	}
+	static String getMtvN() {
+		return mtvN;
+	}
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -40,21 +67,20 @@ public class TelaBackground {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public TelaBackground() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frmBackgroundDoHeri = new JFrame();
 		frmBackgroundDoHeri.getContentPane().setFont(new Font("Marcellus SC", Font.PLAIN, 11));
 		frmBackgroundDoHeri.getContentPane().setBackground(Color.DARK_GRAY);
 		frmBackgroundDoHeri.getContentPane().setLayout(null);
+		frmBackgroundDoHeri.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaBackground.class.getResource("/imagens/IconNecromante.png")));
+		frmBackgroundDoHeri.setTitle("Background do herói");
+		frmBackgroundDoHeri.setBounds(100, 100, 450, 300);
+		
+		//Escolha da origem - imagens/radio buttons
 		
 		JLabel lblNewLabel_1 = new JLabel("Origem:");
 		lblNewLabel_1.setForeground(Color.WHITE);
@@ -64,7 +90,6 @@ public class TelaBackground {
 		frmBackgroundDoHeri.getContentPane().add(lblNewLabel_1);
 		
 		JRadioButton origem1RB = new JRadioButton("");
-		origem1RB.setSelected(true);
 		origem1RB.setBackground(Color.DARK_GRAY);
 		origem1RB.setHorizontalAlignment(SwingConstants.CENTER);
 		origem1RB.setBounds(81, 12, 15, 14);
@@ -114,156 +139,189 @@ public class TelaBackground {
             public void actionPerformed(ActionEvent e) {
                 origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem.jpg")));
                 origemLabel.setToolTipText("Deserto do Arrependimento");
+                escolhaOrigem = "o Deserto";
             }
         });
         origem2RB.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem1.jpg")));
-                origemLabel.setToolTipText("Castelo Amaldiçoado");
+                origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem4.jpg")));
+                origemLabel.setToolTipText("Cidade Abandonada");
+                escolhaOrigem = "a Cidade";
             }
         });
         origem3RB.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem2.jpg")));
                 origemLabel.setToolTipText("Mar dos Mortos");
+                escolhaOrigem = "o Mar";
             }
         });
         origem4RB.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem3.jpg")));
                 origemLabel.setToolTipText("Floresta Viva");
+                escolhaOrigem = "a Floresta";
             }
         });
         origem5RB.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem4.jpg")));
-                origemLabel.setToolTipText("Cidade Abandonada");
+                origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem0.png")));
+                origemLabel.setToolTipText("Desconhecido");
+                escolhaOrigem = "um lugar desconhecido";
             }
         });
 		
+        //Escolha das motivações
+        
 		JLabel lblNewLabel_3 = new JLabel("Motivações:");
 		lblNewLabel_3.setForeground(Color.WHITE);
 		lblNewLabel_3.setFont(new Font("Papyrus", Font.PLAIN, 14));
 		lblNewLabel_3.setBounds(339, 11, 83, 14);
 		frmBackgroundDoHeri.getContentPane().add(lblNewLabel_3);
 		
-		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Família");
-		chckbxNewCheckBox_1.setFocusPainted(false);
-		chckbxNewCheckBox_1.setHorizontalTextPosition(SwingConstants.LEFT);
-		chckbxNewCheckBox_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		chckbxNewCheckBox_1.setForeground(Color.LIGHT_GRAY);
-		chckbxNewCheckBox_1.setFont(new Font("Papyrus", Font.PLAIN, 13));
-		chckbxNewCheckBox_1.setBackground(Color.DARK_GRAY);
-		chckbxNewCheckBox_1.setBounds(325, 39, 97, 23);
-		frmBackgroundDoHeri.getContentPane().add(chckbxNewCheckBox_1);
+		JCheckBox checkF = new JCheckBox("Família");
+		checkF.setFocusPainted(false);
+		checkF.setHorizontalTextPosition(SwingConstants.LEFT);
+		checkF.setHorizontalAlignment(SwingConstants.RIGHT);
+		checkF.setForeground(Color.LIGHT_GRAY);
+		checkF.setFont(new Font("Papyrus", Font.PLAIN, 13));
+		checkF.setBackground(Color.DARK_GRAY);
+		checkF.setBounds(325, 39, 97, 23);
+		frmBackgroundDoHeri.getContentPane().add(checkF);
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("Poder");
-		chckbxNewCheckBox.setFocusPainted(false);
-		chckbxNewCheckBox.setHorizontalTextPosition(SwingConstants.LEFT);
-		chckbxNewCheckBox.setHorizontalAlignment(SwingConstants.RIGHT);
-		chckbxNewCheckBox.setForeground(Color.LIGHT_GRAY);
-		chckbxNewCheckBox.setFont(new Font("Papyrus", Font.PLAIN, 13));
-		chckbxNewCheckBox.setBackground(Color.DARK_GRAY);
-		chckbxNewCheckBox.setBounds(325, 69, 97, 23);
-		frmBackgroundDoHeri.getContentPane().add(chckbxNewCheckBox);
+		JCheckBox checkP = new JCheckBox("Poder");
+		checkP.setFocusPainted(false);
+		checkP.setHorizontalTextPosition(SwingConstants.LEFT);
+		checkP.setHorizontalAlignment(SwingConstants.RIGHT);
+		checkP.setForeground(Color.LIGHT_GRAY);
+		checkP.setFont(new Font("Papyrus", Font.PLAIN, 13));
+		checkP.setBackground(Color.DARK_GRAY);
+		checkP.setBounds(325, 69, 97, 23);
+		frmBackgroundDoHeri.getContentPane().add(checkP);
 		
-		JCheckBox chckbxVingana = new JCheckBox("Vingança");
-		chckbxVingana.setFocusPainted(false);
-		chckbxVingana.setHorizontalTextPosition(SwingConstants.LEFT);
-		chckbxVingana.setHorizontalAlignment(SwingConstants.RIGHT);
-		chckbxVingana.setForeground(Color.LIGHT_GRAY);
-		chckbxVingana.setFont(new Font("Papyrus", Font.PLAIN, 13));
-		chckbxVingana.setBackground(Color.DARK_GRAY);
-		chckbxVingana.setBounds(325, 99, 97, 23);
-		frmBackgroundDoHeri.getContentPane().add(chckbxVingana);
+		JCheckBox checkV = new JCheckBox("Vingança");
+		checkV.setFocusPainted(false);
+		checkV.setHorizontalTextPosition(SwingConstants.LEFT);
+		checkV.setHorizontalAlignment(SwingConstants.RIGHT);
+		checkV.setForeground(Color.LIGHT_GRAY);
+		checkV.setFont(new Font("Papyrus", Font.PLAIN, 13));
+		checkV.setBackground(Color.DARK_GRAY);
+		checkV.setBounds(325, 99, 97, 23);
+		frmBackgroundDoHeri.getContentPane().add(checkV);
 		
-		JCheckBox chckbxComida = new JCheckBox("Alimento");
-		chckbxComida.setFocusPainted(false);
-		chckbxComida.setHorizontalTextPosition(SwingConstants.LEFT);
-		chckbxComida.setHorizontalAlignment(SwingConstants.RIGHT);
-		chckbxComida.setForeground(Color.LIGHT_GRAY);
-		chckbxComida.setFont(new Font("Papyrus", Font.PLAIN, 13));
-		chckbxComida.setBackground(Color.DARK_GRAY);
-		chckbxComida.setBounds(325, 129, 97, 23);
-		frmBackgroundDoHeri.getContentPane().add(chckbxComida);
+		JCheckBox checkA = new JCheckBox("Alimento");
+		checkA.setFocusPainted(false);
+		checkA.setHorizontalTextPosition(SwingConstants.LEFT);
+		checkA.setHorizontalAlignment(SwingConstants.RIGHT);
+		checkA.setForeground(Color.LIGHT_GRAY);
+		checkA.setFont(new Font("Papyrus", Font.PLAIN, 13));
+		checkA.setBackground(Color.DARK_GRAY);
+		checkA.setBounds(325, 129, 97, 23);
+		frmBackgroundDoHeri.getContentPane().add(checkA);
 		
-		JCheckBox chckbxConhecimento = new JCheckBox("Conhecimento");
-		chckbxConhecimento.setFocusPainted(false);
-		chckbxConhecimento.setHorizontalTextPosition(SwingConstants.LEFT);
-		chckbxConhecimento.setHorizontalAlignment(SwingConstants.RIGHT);
-		chckbxConhecimento.setForeground(Color.LIGHT_GRAY);
-		chckbxConhecimento.setFont(new Font("Papyrus", Font.PLAIN, 13));
-		chckbxConhecimento.setBackground(Color.DARK_GRAY);
-		chckbxConhecimento.setBounds(298, 159, 124, 23);
-		frmBackgroundDoHeri.getContentPane().add(chckbxConhecimento);
+		JCheckBox checkC = new JCheckBox("Conhecimento");
+		checkC.setFocusPainted(false);
+		checkC.setHorizontalTextPosition(SwingConstants.LEFT);
+		checkC.setHorizontalAlignment(SwingConstants.RIGHT);
+		checkC.setForeground(Color.LIGHT_GRAY);
+		checkC.setFont(new Font("Papyrus", Font.PLAIN, 13));
+		checkC.setBackground(Color.DARK_GRAY);
+		checkC.setBounds(298, 159, 124, 23);
+		frmBackgroundDoHeri.getContentPane().add(checkC);
 		
-		JCheckBox nenhumaCheck = new JCheckBox("Nenhuma");
-		nenhumaCheck.setFocusPainted(false);
-		nenhumaCheck.setHorizontalTextPosition(SwingConstants.LEFT);
-		nenhumaCheck.setHorizontalAlignment(SwingConstants.RIGHT);
-		nenhumaCheck.setForeground(Color.LIGHT_GRAY);
-		nenhumaCheck.setFont(new Font("Papyrus", Font.PLAIN, 13));
-		nenhumaCheck.setBackground(Color.DARK_GRAY);
-		nenhumaCheck.setBounds(325, 189, 97, 23);
-		frmBackgroundDoHeri.getContentPane().add(nenhumaCheck);
+		JCheckBox checkN = new JCheckBox("Nenhuma");
+		checkN.setFocusPainted(false);
+		checkN.setHorizontalTextPosition(SwingConstants.LEFT);
+		checkN.setHorizontalAlignment(SwingConstants.RIGHT);
+		checkN.setForeground(Color.LIGHT_GRAY);
+		checkN.setFont(new Font("Papyrus", Font.PLAIN, 13));
+		checkN.setBackground(Color.DARK_GRAY);
+		checkN.setBounds(325, 189, 97, 23);
+		frmBackgroundDoHeri.getContentPane().add(checkN);
 		
-		nenhumaCheck.addActionListener(new ActionListener() {
+		ActionListener checkListener = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (nenhumaCheck.isSelected()) {
-                    chckbxNewCheckBox_1.setEnabled(false);
-                    chckbxNewCheckBox.setEnabled(false);
-                    chckbxVingana.setEnabled(false);
-                    chckbxComida.setEnabled(false);
-                    chckbxConhecimento.setEnabled(false);
-                    chckbxNewCheckBox_1.setSelected(false);
-                    chckbxNewCheckBox.setSelected(false);
-                    chckbxVingana.setSelected(false);
-                    chckbxComida.setSelected(false);
-                    chckbxConhecimento.setSelected(false);
+                if (checkN.isSelected()) {
+                	mtvN = "por nada";
+                    checkF.setEnabled(false);
+                    checkP.setEnabled(false);
+                    checkV.setEnabled(false);
+                    checkA.setEnabled(false);
+                    checkC.setEnabled(false);
+                    checkF.setSelected(false);
+                    checkP.setSelected(false);
+                    checkV.setSelected(false);
+                    checkA.setSelected(false);
+                    checkC.setSelected(false);
                 } else {
-                	 chckbxNewCheckBox_1.setEnabled(true);
-                     chckbxNewCheckBox.setEnabled(true);
-                     chckbxVingana.setEnabled(true);
-                     chckbxComida.setEnabled(true);
-                     chckbxConhecimento.setEnabled(true);
+                	mtvN = "0";
+                	 checkF.setEnabled(true);
+                     checkP.setEnabled(true);
+                     checkV.setEnabled(true);
+                     checkA.setEnabled(true);
+                     checkC.setEnabled(true);
                 }
+                if(checkF.isSelected())
+                	mtvF = "pela família";
+                else
+                	mtvF = "0";
+                if(checkP.isSelected())
+                	mtvP = "pelo poder";
+                else
+                	mtvP = "0";
+                if(checkV.isSelected())
+                	mtvV = "pela vingança";
+                else
+                	mtvV = "0";
+                if(checkA.isSelected())
+                	mtvA = "por alimento";
+                else
+                	mtvA = "0";
+                if(checkC.isSelected())
+                	mtvC = "pelo conhecimento";
+                else
+                	mtvC = "0";
             }
-            });
+            };
 		
-		JButton btnNewButton_1_1 = new JButton("Voltar");
-		btnNewButton_1_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnNewButton_1_1.setBorder(null);
-		btnNewButton_1_1.setBackground(Color.LIGHT_GRAY);
-		btnNewButton_1_1.setFont(new Font("Papyrus", Font.BOLD, 12));
-		btnNewButton_1_1.setBounds(12, 226, 109, 23);
-		frmBackgroundDoHeri.getContentPane().add(btnNewButton_1_1);
+        checkF.addActionListener(checkListener);
+        checkP.addActionListener(checkListener);
+        checkV.addActionListener(checkListener);
+        checkA.addActionListener(checkListener);
+        checkC.addActionListener(checkListener);
+        checkN.addActionListener(checkListener);
+
+		//Botões continuar e voltar
 		
-		btnNewButton_1_1.addActionListener(new ActionListener() {
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnVoltar.setBorder(null);
+		btnVoltar.setBackground(Color.LIGHT_GRAY);
+		btnVoltar.setFont(new Font("Papyrus", Font.BOLD, 12));
+		btnVoltar.setBounds(12, 226, 109, 23);
+		frmBackgroundDoHeri.getContentPane().add(btnVoltar);
+		
+		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frmBackgroundDoHeri.dispose();
 				TelaCriacao.main(null);
 			}
 		});
 		
-		JButton btnNewButton_1 = new JButton("Confirmar");
-		btnNewButton_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnNewButton_1.setBorder(null);
-		btnNewButton_1.setForeground(Color.BLACK);
-		btnNewButton_1.setBackground(Color.LIGHT_GRAY);
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnContinuar = new JButton("Confirmar");
+		btnContinuar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnContinuar.setBorder(null);
+		btnContinuar.setForeground(Color.BLACK);
+		btnContinuar.setBackground(Color.LIGHT_GRAY);
+		btnContinuar.setFont(new Font("Papyrus", Font.BOLD, 12));
+		btnContinuar.setBounds(136, 226, 288, 23);
+		frmBackgroundDoHeri.getContentPane().add(btnContinuar);
+		btnContinuar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frmBackgroundDoHeri.dispose();
 				TelaGeral.main(null);	
 			}
 		});
-		
-		btnNewButton_1.setFont(new Font("Papyrus", Font.BOLD, 12));
-		btnNewButton_1.setBounds(136, 226, 288, 23);
-		frmBackgroundDoHeri.getContentPane().add(btnNewButton_1);
-		
-		frmBackgroundDoHeri.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaBackground.class.getResource("/imagens/IconNecromante.png")));
-		frmBackgroundDoHeri.setTitle("Background do herói");
-		frmBackgroundDoHeri.setBounds(100, 100, 450, 300);
 		
 		frmBackgroundDoHeri.setVisible(true);
 	

@@ -93,7 +93,7 @@ public class Registro {
 
 		JLabel labelConfirmaSenha = new JLabel("Confirmar senha");
 		labelConfirmaSenha.setForeground(Color.LIGHT_GRAY);
-		labelConfirmaSenha.setFont(new Font("Papyrus", Font.PLAIN, 11));
+		labelConfirmaSenha.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		labelConfirmaSenha.setBounds(10, 160, 342, 14);
 		frmRegistro.getContentPane().add(labelConfirmaSenha);
 
@@ -135,20 +135,20 @@ public class Registro {
 
 		JLabel labelSenha = new JLabel("Senha");
 		labelSenha.setForeground(Color.LIGHT_GRAY);
-		labelSenha.setFont(new Font("Papyrus", Font.PLAIN, 11));
+		labelSenha.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		labelSenha.setBounds(10, 112, 46, 14);
 		frmRegistro.getContentPane().add(labelSenha);
 
 		JLabel labelEmail = new JLabel("E-mail");
 		labelEmail.setForeground(Color.LIGHT_GRAY);
-		labelEmail.setFont(new Font("Papyrus", Font.PLAIN, 11));
+		labelEmail.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		labelEmail.setHorizontalAlignment(SwingConstants.LEFT);
 		labelEmail.setBounds(10, 62, 46, 14);
 		frmRegistro.getContentPane().add(labelEmail);
 
 		JLabel labelNome = new JLabel("Nome");
 		labelNome.setForeground(Color.LIGHT_GRAY);
-		labelNome.setFont(new Font("Papyrus", Font.PLAIN, 11));
+		labelNome.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		labelNome.setHorizontalAlignment(SwingConstants.LEFT);
 		labelNome.setBounds(10, 11, 46, 14);
 		frmRegistro.getContentPane().add(labelNome);

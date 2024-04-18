@@ -33,6 +33,36 @@ public class TelaCriacao {
 	private ImageIcon classeImagens[];
 	public JSlider slider;
 	public JLabel lblNewLabel;
+	private static String escolhaClasse;
+	private static int pontosF;
+	private static int pontosA;
+	private static int pontosI;
+	private static int pontosM;
+	private static int pontosD;
+	private static int pontosV;
+	
+	static String getEscolhaClasse() {
+		return escolhaClasse;
+	}
+	
+	static int getPontosF() {
+		return pontosF;
+	}
+	static int getPontosA() {
+		return pontosA;
+	}
+	static int getPontosI() {
+		return pontosI;
+	}
+	static int getPontosM() {
+		return pontosM;
+	}
+	static int getPontosD() {
+		return pontosD;
+	}
+	static int getPontosV() {
+		return pontosV;
+	}
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -65,7 +95,8 @@ public class TelaCriacao {
 		frmCriarHeroi.setBounds(100, 100, 450, 300);
 		frmCriarHeroi.getContentPane().setLayout(null);
 
-		// Personagem
+		// Escolha da classe - slider/imagens
+		
 		JSlider slider = new JSlider();
 		slider.setBorder(null);
 		slider.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -83,26 +114,24 @@ public class TelaCriacao {
 		imagemLabel.setBounds(42, 35, 175, 188);
 		frmCriarHeroi.getContentPane().add(imagemLabel);
 
-		JLabel testeLabel = new JLabel("Guerreiro");
-		testeLabel.setFont(new Font("Monotype Corsiva", Font.PLAIN, 20));
-		testeLabel.setForeground(Color.RED);
-		testeLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		testeLabel.setBounds(10, 227, 200, 23);
-		frmCriarHeroi.getContentPane().add(testeLabel);
-
+		JLabel nomeClasseLabel = new JLabel("Guerreiro");
+		nomeClasseLabel.setFont(new Font("Monotype Corsiva", Font.PLAIN, 20));
+		nomeClasseLabel.setForeground(Color.RED);
+		nomeClasseLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		nomeClasseLabel.setBounds(10, 227, 200, 23);
+		frmCriarHeroi.getContentPane().add(nomeClasseLabel);
 		
-
 		slider.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent e) {
 				int index = slider.getValue();
-				testeLabel.setText(classeNomes[index]);
+				nomeClasseLabel.setText(classeNomes[index]);
 				imagemLabel.setIcon(classeImagens[index]);
+				escolhaClasse = classeNomes[index];
 			}
 		});
 				
-
-		
 		// Distribuição de pontos
+		
 		JSpinner spinnerF = new JSpinner();
 		spinnerF.setBorder(null);
 		spinnerF.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -149,47 +178,47 @@ public class TelaCriacao {
 		spinnerV.setBounds(371, 172, 39, 20);
 		frmCriarHeroi.getContentPane().add(spinnerV);
 
-		JLabel lblFora = new JLabel("Força");
-		lblFora.setToolTipText("Relacionado a força bruta de ataque.");
-		lblFora.setFont(new Font("Papyrus", Font.PLAIN, 12));
-		lblFora.setForeground(Color.LIGHT_GRAY);
-		lblFora.setBounds(270, 22, 68, 14);
-		frmCriarHeroi.getContentPane().add(lblFora);
+		JLabel labelF = new JLabel("Força");
+		labelF.setToolTipText("Relacionado a força bruta de ataque.");
+		labelF.setFont(new Font("Papyrus", Font.PLAIN, 12));
+		labelF.setForeground(Color.LIGHT_GRAY);
+		labelF.setBounds(270, 22, 68, 14);
+		frmCriarHeroi.getContentPane().add(labelF);
 
-		JLabel lblNewLabel_1_1 = new JLabel("Agilidade");
-		lblNewLabel_1_1.setToolTipText("Relacionado a velocidade de movimento.");
-		lblNewLabel_1_1.setFont(new Font("Papyrus", Font.PLAIN, 12));
-		lblNewLabel_1_1.setForeground(Color.LIGHT_GRAY);
-		lblNewLabel_1_1.setBounds(270, 52, 76, 14);
-		frmCriarHeroi.getContentPane().add(lblNewLabel_1_1);
+		JLabel labelA = new JLabel("Agilidade");
+		labelA.setToolTipText("Relacionado a velocidade de movimento.");
+		labelA.setFont(new Font("Papyrus", Font.PLAIN, 12));
+		labelA.setForeground(Color.LIGHT_GRAY);
+		labelA.setBounds(270, 52, 76, 14);
+		frmCriarHeroi.getContentPane().add(labelA);
 
-		JLabel lblNewLabel_1_2 = new JLabel("Inteligência");
-		lblNewLabel_1_2.setToolTipText("Relacionado ao raciocínio lógico.");
-		lblNewLabel_1_2.setFont(new Font("Papyrus", Font.PLAIN, 12));
-		lblNewLabel_1_2.setForeground(Color.LIGHT_GRAY);
-		lblNewLabel_1_2.setBounds(270, 82, 76, 14);
-		frmCriarHeroi.getContentPane().add(lblNewLabel_1_2);
+		JLabel labelI = new JLabel("Inteligência");
+		labelI.setToolTipText("Relacionado ao raciocínio lógico.");
+		labelI.setFont(new Font("Papyrus", Font.PLAIN, 12));
+		labelI.setForeground(Color.LIGHT_GRAY);
+		labelI.setBounds(270, 82, 76, 14);
+		frmCriarHeroi.getContentPane().add(labelI);
 
-		JLabel lblNewLabel_1_3 = new JLabel("Magia");
-		lblNewLabel_1_3.setToolTipText("Relacionado aos conhecimentos mágicos.");
-		lblNewLabel_1_3.setFont(new Font("Papyrus", Font.PLAIN, 12));
-		lblNewLabel_1_3.setForeground(Color.LIGHT_GRAY);
-		lblNewLabel_1_3.setBounds(270, 112, 68, 14);
-		frmCriarHeroi.getContentPane().add(lblNewLabel_1_3);
+		JLabel labelM = new JLabel("Magia");
+		labelM.setToolTipText("Relacionado aos conhecimentos mágicos.");
+		labelM.setFont(new Font("Papyrus", Font.PLAIN, 12));
+		labelM.setForeground(Color.LIGHT_GRAY);
+		labelM.setBounds(270, 112, 68, 14);
+		frmCriarHeroi.getContentPane().add(labelM);
 
-		JLabel lblNewLabel_1_4 = new JLabel("Destreza");
-		lblNewLabel_1_4.setToolTipText("Relacionada a habilidade técnica.");
-		lblNewLabel_1_4.setFont(new Font("Papyrus", Font.PLAIN, 12));
-		lblNewLabel_1_4.setForeground(Color.LIGHT_GRAY);
-		lblNewLabel_1_4.setBounds(270, 142, 68, 14);
-		frmCriarHeroi.getContentPane().add(lblNewLabel_1_4);
+		JLabel labelD = new JLabel("Destreza");
+		labelD.setToolTipText("Relacionada a habilidade técnica.");
+		labelD.setFont(new Font("Papyrus", Font.PLAIN, 12));
+		labelD.setForeground(Color.LIGHT_GRAY);
+		labelD.setBounds(270, 142, 68, 14);
+		frmCriarHeroi.getContentPane().add(labelD);
 
-		JLabel lblNewLabel_1_5 = new JLabel("Vida");
-		lblNewLabel_1_5.setToolTipText("Relacionado com a vida máxima");
-		lblNewLabel_1_5.setFont(new Font("Papyrus", Font.PLAIN, 12));
-		lblNewLabel_1_5.setForeground(Color.LIGHT_GRAY);
-		lblNewLabel_1_5.setBounds(270, 172, 68, 14);
-		frmCriarHeroi.getContentPane().add(lblNewLabel_1_5);
+		JLabel labelV = new JLabel("Vida");
+		labelV.setToolTipText("Relacionado com a vida máxima");
+		labelV.setFont(new Font("Papyrus", Font.PLAIN, 12));
+		labelV.setForeground(Color.LIGHT_GRAY);
+		labelV.setBounds(270, 172, 68, 14);
+		frmCriarHeroi.getContentPane().add(labelV);
 
 		JLabel pontosLabel = new JLabel("Pontos disponíveis: 50");
 		pontosLabel.setFont(new Font("Papyrus", Font.BOLD, 13));
@@ -197,6 +226,37 @@ public class TelaCriacao {
 		pontosLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		pontosLabel.setBounds(270, 201, 140, 14);
 		frmCriarHeroi.getContentPane().add(pontosLabel);
+		
+		JButton btnContinuar = new JButton("Continuar");
+		btnContinuar.setBackground(Color.LIGHT_GRAY);
+		btnContinuar.setBorder(null);
+		btnContinuar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnContinuar.setFont(new Font("Papyrus", Font.BOLD, 11));
+		btnContinuar.setBounds(329, 227, 80, 23);
+		btnContinuar.setEnabled(false);
+		frmCriarHeroi.getContentPane().add(btnContinuar);
+		
+		btnContinuar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 frmCriarHeroi.dispose();
+	             TelaBackground.main(null);
+			}
+		});
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnVoltar.setFont(new Font("Papyrus", Font.BOLD, 11));
+		btnVoltar.setBorder(null);
+		btnVoltar.setBackground(Color.LIGHT_GRAY);
+		btnVoltar.setBounds(268, 227, 51, 23);
+		frmCriarHeroi.getContentPane().add(btnVoltar);
+		
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 frmCriarHeroi.dispose();
+	             TelaInicio.main(null);
+			}
+		});
 		
 		 ChangeListener spinnerListener = new ChangeListener() {
 	            @Override
@@ -212,13 +272,20 @@ public class TelaCriacao {
 	                pontosLabel.setText("Pontos disponíveis: " + totalPontos);
 
 	                if (totalPontos <= 0) {
+	                	btnContinuar.setEnabled(true);
 	                    spinnerF.setEnabled(false);
 	                    spinnerA.setEnabled(false);
 	                    spinnerI.setEnabled(false);
 	                    spinnerM.setEnabled(false);
 	                    spinnerD.setEnabled(false);
 	                    spinnerV.setEnabled(false);
-	                } 
+	                	} 
+	                pontosF = (int) spinnerF.getValue();
+	                pontosA = (int) spinnerA.getValue();
+	                pontosI = (int) spinnerI.getValue();
+	                pontosM = (int) spinnerM.getValue();
+	                pontosD = (int) spinnerD.getValue();
+	                pontosV = (int) spinnerV.getValue();
 	            }
 	        };
 	        spinnerF.addChangeListener(spinnerListener);
@@ -228,36 +295,15 @@ public class TelaCriacao {
 	        spinnerD.addChangeListener(spinnerListener);
 	        spinnerV.addChangeListener(spinnerListener);
 
-	        frmCriarHeroi.setVisible(true);
+	        //Botões voltar e continuar
 	        
-	        JButton btnNewButton = new JButton("Continuar");
-			btnNewButton.setBackground(Color.LIGHT_GRAY);
-			btnNewButton.setBorder(null);
-			btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnNewButton.setFont(new Font("Papyrus", Font.BOLD, 11));
-			btnNewButton.setBounds(329, 227, 80, 23);
-			frmCriarHeroi.getContentPane().add(btnNewButton);
+	        
 			
-			btnNewButton.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					 frmCriarHeroi.dispose();
-		             TelaBackground.main(null);
-				}
-			});
 			
-			JButton btnVoltar = new JButton("Voltar");
-			btnVoltar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnVoltar.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					 frmCriarHeroi.dispose();
-		             TelaInicio.main(null);
-				}
-			});
-			btnVoltar.setFont(new Font("Papyrus", Font.BOLD, 11));
-			btnVoltar.setBorder(null);
-			btnVoltar.setBackground(Color.LIGHT_GRAY);
-			btnVoltar.setBounds(268, 227, 51, 23);
-			frmCriarHeroi.getContentPane().add(btnVoltar);
 
+			frmCriarHeroi.setVisible(true);
+			
 	}
+
+	
 }

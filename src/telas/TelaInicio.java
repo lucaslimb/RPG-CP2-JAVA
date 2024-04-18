@@ -24,16 +24,22 @@ import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JEditorPane;
 import javax.swing.ImageIcon;
+import javax.swing.DropMode;
 
 public class TelaInicio {
 
 	private JFrame frmInicio;
 	private JTextField txtNomeHeroi;
 	private static String nomeHeroi;
+	private static String escolhaRaca;
+	
 	public static String getNomeHeroi() {
 		return nomeHeroi;
 	}
 	
+	static String getEscolhaRaca() {
+		return escolhaRaca;
+	}
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -58,6 +64,12 @@ public class TelaInicio {
 		frmInicio = new JFrame();
 		frmInicio.getContentPane().setBackground(Color.DARK_GRAY);
 		frmInicio.getContentPane().setLayout(null);
+		frmInicio.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaInicio.class.getResource("/imagens/IconNecromante.png")));
+		frmInicio.setTitle("Inicio");
+		frmInicio.setBounds(100, 100, 450, 300);
+		frmInicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		//Nome do herói
 		
 		JLabel lblNomeDoHeri = new JLabel("Nome do herói");
 		lblNomeDoHeri.setHorizontalAlignment(SwingConstants.CENTER);
@@ -73,9 +85,13 @@ public class TelaInicio {
 		
 		txtNomeHeroi.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+		        if (txtNomeHeroi.getText().length() > 10) 
+		            txtNomeHeroi.setText(txtNomeHeroi.getText().substring(0, 10));
                 nomeHeroi = txtNomeHeroi.getText();
             }
         });
+		
+		//Escolha da raça - imagens e botões
 		
 		JLabel lblRaa = new JLabel("Raça");
 		lblRaa.setHorizontalAlignment(SwingConstants.CENTER);
@@ -140,10 +156,6 @@ public class TelaInicio {
         buttonGroup.add(elfoRB);
         buttonGroup.add(anaoRB);
         buttonGroup.add(demonioRB);
-		frmInicio.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaInicio.class.getResource("/imagens/IconNecromante.png")));
-		frmInicio.setTitle("Inicio");
-		frmInicio.setBounds(100, 100, 450, 300);
-		frmInicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JLabel humanoLabel = new JLabel("");
 		humanoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/humano2.png")));
@@ -175,48 +187,59 @@ public class TelaInicio {
 		demonioLabel.setBounds(330, 88, 101, 108);
 		frmInicio.getContentPane().add(demonioLabel);
 		
-        
         humanoRB.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
-            	if(humanoRB.isSelected()) 
+            	if(humanoRB.isSelected()) {
             		humanoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/humano.png")));
+            		escolhaRaca = "humano";
+            	}
             	else
             		humanoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/humano2.png")));
             }
         });
         ogroRB.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
-            	if(ogroRB.isSelected()) 
+            	if(ogroRB.isSelected()) {
             		ogroLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/ogro.png")));
+            		escolhaRaca = "ogro";
+            	}
             	else
             		ogroLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/ogro2.png")));
             }
         });
         elfoRB.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
-            	if(elfoRB.isSelected()) 
+            	if(elfoRB.isSelected()) {
             		elfoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/elfo.png")));
+            		escolhaRaca = "elfo";
+            	}
             	else
             		elfoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/elfo2.png")));
             }
         });
         anaoRB.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
-            	if(anaoRB.isSelected()) 
+            	if(anaoRB.isSelected()) {
             		anaoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/anao.png")));
+            		escolhaRaca = "anão";
+            	}
             	else
             		anaoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/anao2.png")));
             }
         });
         demonioRB.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
-            	if(demonioRB.isSelected()) 
+            	if(demonioRB.isSelected()) {
             		demonioLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/demonio1.png")));
+            		escolhaRaca = "demônio";
+            	}
             	else
             		demonioLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/demonio22.png")));
             }
         });
 		
+        //Botões voltar e continuar
+        
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnVoltar.setBackground(Color.LIGHT_GRAY);
