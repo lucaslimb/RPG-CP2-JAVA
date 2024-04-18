@@ -4,18 +4,23 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JToggleButton;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.JSlider;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import java.awt.Cursor;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JEditorPane;
 import javax.swing.ImageIcon;
@@ -49,116 +54,189 @@ public class TelaInicio {
 		frmInicio.getContentPane().setBackground(Color.DARK_GRAY);
 		frmInicio.getContentPane().setLayout(null);
 		
-		JLabel lblNomeDoHeri = new JLabel("Nome do herói:");
-		lblNomeDoHeri.setHorizontalAlignment(SwingConstants.LEFT);
+		JLabel lblNomeDoHeri = new JLabel("Nome do herói");
+		lblNomeDoHeri.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNomeDoHeri.setForeground(Color.WHITE);
-		lblNomeDoHeri.setFont(new Font("Papyrus", Font.PLAIN, 14));
-		lblNomeDoHeri.setBounds(10, 11, 137, 14);
+		lblNomeDoHeri.setFont(new Font("Papyrus", Font.PLAIN, 16));
+		lblNomeDoHeri.setBounds(156, 8, 120, 18);
 		frmInicio.getContentPane().add(lblNomeDoHeri);
 		
 		textField = new JTextField();
-		textField.setBounds(10, 32, 414, 20);
+		textField.setBounds(9, 34, 414, 20);
 		frmInicio.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblRaa = new JLabel("Raça:");
-		lblRaa.setHorizontalAlignment(SwingConstants.LEFT);
+		JLabel lblRaa = new JLabel("Raça");
+		lblRaa.setHorizontalAlignment(SwingConstants.CENTER);
 		lblRaa.setForeground(Color.WHITE);
-		lblRaa.setFont(new Font("Papyrus", Font.PLAIN, 14));
-		lblRaa.setBounds(10, 63, 137, 14);
+		lblRaa.setFont(new Font("Papyrus", Font.PLAIN, 16));
+		lblRaa.setBounds(186, 62, 58, 26);
 		frmInicio.getContentPane().add(lblRaa);
 		
-		JRadioButton rdbtnHumano = new JRadioButton("Humano");
-		rdbtnHumano.setFont(new Font("Papyrus", Font.PLAIN, 13));
-		rdbtnHumano.setSelected(true);
-		rdbtnHumano.setHorizontalAlignment(SwingConstants.LEFT);
-		rdbtnHumano.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		rdbtnHumano.setForeground(Color.LIGHT_GRAY);
-		rdbtnHumano.setBackground(Color.DARK_GRAY);
-		rdbtnHumano.setBounds(6, 84, 109, 23);
-		frmInicio.getContentPane().add(rdbtnHumano);
+		JRadioButton humanoRB = new JRadioButton("Humano");
+		humanoRB.setFocusPainted(false);
+		humanoRB.setFont(new Font("Papyrus", Font.PLAIN, 13));
+		humanoRB.setHorizontalAlignment(SwingConstants.CENTER);
+		humanoRB.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		humanoRB.setForeground(Color.LIGHT_GRAY);
+		humanoRB.setBackground(Color.DARK_GRAY);
+		humanoRB.setBounds(9, 190, 84, 23);
+		frmInicio.getContentPane().add(humanoRB);
 		
-		JRadioButton rdbtnOgro = new JRadioButton("Ogro");
-		rdbtnOgro.setFont(new Font("Papyrus", Font.PLAIN, 13));
-		rdbtnOgro.setHorizontalAlignment(SwingConstants.LEFT);
-		rdbtnOgro.setForeground(Color.LIGHT_GRAY);
-		rdbtnOgro.setBackground(Color.DARK_GRAY);
-		rdbtnOgro.setBounds(6, 110, 109, 23);
-		frmInicio.getContentPane().add(rdbtnOgro);
+		JRadioButton ogroRB = new JRadioButton("Ogro");
+		ogroRB.setFocusPainted(false);
+		ogroRB.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		ogroRB.setFont(new Font("Papyrus", Font.PLAIN, 13));
+		ogroRB.setHorizontalAlignment(SwingConstants.CENTER);
+		ogroRB.setForeground(Color.LIGHT_GRAY);
+		ogroRB.setBackground(Color.DARK_GRAY);
+		ogroRB.setBounds(101, 190, 72, 23);
+		frmInicio.getContentPane().add(ogroRB);
 		
-		JRadioButton rdbtnElfo = new JRadioButton("Elfo");
-		rdbtnElfo.setFont(new Font("Papyrus", Font.PLAIN, 13));
-		rdbtnElfo.setHorizontalAlignment(SwingConstants.LEFT);
-		rdbtnElfo.setForeground(Color.LIGHT_GRAY);
-		rdbtnElfo.setBackground(Color.DARK_GRAY);
-		rdbtnElfo.setBounds(6, 136, 109, 23);
-		frmInicio.getContentPane().add(rdbtnElfo);
+		JRadioButton elfoRB = new JRadioButton("Elfo");
+		elfoRB.setFocusPainted(false);
+		elfoRB.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		elfoRB.setFont(new Font("Papyrus", Font.PLAIN, 13));
+		elfoRB.setHorizontalAlignment(SwingConstants.CENTER);
+		elfoRB.setForeground(Color.LIGHT_GRAY);
+		elfoRB.setBackground(Color.DARK_GRAY);
+		elfoRB.setBounds(180, 191, 61, 23);
+		frmInicio.getContentPane().add(elfoRB);
 		
-		JRadioButton rdbtnAno = new JRadioButton("Anão");
-		rdbtnAno.setFont(new Font("Papyrus", Font.PLAIN, 13));
-		rdbtnAno.setHorizontalAlignment(SwingConstants.LEFT);
-		rdbtnAno.setForeground(Color.LIGHT_GRAY);
-		rdbtnAno.setBackground(Color.DARK_GRAY);
-		rdbtnAno.setBounds(6, 162, 109, 23);
-		frmInicio.getContentPane().add(rdbtnAno);
+		JRadioButton anaoRB = new JRadioButton("Anão");
+		anaoRB.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		anaoRB.setFocusPainted(false);
+		anaoRB.setFont(new Font("Papyrus", Font.PLAIN, 13));
+		anaoRB.setHorizontalAlignment(SwingConstants.CENTER);
+		anaoRB.setForeground(Color.LIGHT_GRAY);
+		anaoRB.setBackground(Color.DARK_GRAY);
+		anaoRB.setBounds(254, 191, 76, 23);
+		frmInicio.getContentPane().add(anaoRB);
 		
-		JRadioButton rdbtnDemnio = new JRadioButton("Demônio");
-		rdbtnDemnio.setFont(new Font("Papyrus", Font.PLAIN, 13));
-		rdbtnDemnio.setHorizontalAlignment(SwingConstants.LEFT);
-		rdbtnDemnio.setForeground(Color.LIGHT_GRAY);
-		rdbtnDemnio.setBackground(Color.DARK_GRAY);
-		rdbtnDemnio.setBounds(6, 188, 109, 23);
-		frmInicio.getContentPane().add(rdbtnDemnio);
+		JRadioButton demonioRB = new JRadioButton("Demônio");
+		demonioRB.setFocusPainted(false);
+		demonioRB.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		demonioRB.setFont(new Font("Papyrus", Font.PLAIN, 13));
+		demonioRB.setHorizontalAlignment(SwingConstants.CENTER);
+		demonioRB.setForeground(Color.LIGHT_GRAY);
+		demonioRB.setBackground(Color.DARK_GRAY);
+		demonioRB.setBounds(333, 191, 91, 23);
+		frmInicio.getContentPane().add(demonioRB);
 		
-		JButton btnNewButton = new JButton("Voltar");
-		btnNewButton.setBackground(Color.LIGHT_GRAY);
-		btnNewButton.setBorder(null);
-		btnNewButton.setFont(new Font("Papyrus", Font.BOLD, 12));
-		btnNewButton.setBounds(12, 226, 109, 23);
-		frmInicio.getContentPane().add(btnNewButton);
+		ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup.add(humanoRB);
+        buttonGroup.add(ogroRB);
+        buttonGroup.add(elfoRB);
+        buttonGroup.add(anaoRB);
+        buttonGroup.add(demonioRB);
+		frmInicio.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaInicio.class.getResource("/imagens/IconNecromante.png")));
+		frmInicio.setTitle("Inicio");
+		frmInicio.setBounds(100, 100, 450, 300);
+		frmInicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JLabel humanoLabel = new JLabel("");
+		humanoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/humano2.png")));
+		humanoLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		humanoLabel.setBounds(2, 88, 101, 108);
+		frmInicio.getContentPane().add(humanoLabel);
+		
+		JLabel ogroLabel = new JLabel("");
+		ogroLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/ogro2.png")));
+		ogroLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		ogroLabel.setBounds(81, 88, 101, 108);
+		frmInicio.getContentPane().add(ogroLabel);
+		
+		JLabel elfoLabel = new JLabel("");
+		elfoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/elfo2.png")));
+		elfoLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		elfoLabel.setBounds(162, 88, 101, 108);
+		frmInicio.getContentPane().add(elfoLabel);
+		
+		JLabel anaoLabel = new JLabel("");
+		anaoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/anao2.png")));
+		anaoLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		anaoLabel.setBounds(244, 88, 101, 108);
+		frmInicio.getContentPane().add(anaoLabel);
+		
+		JLabel demonioLabel = new JLabel("");
+		demonioLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/demonio22.png")));
+		demonioLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		demonioLabel.setBounds(330, 88, 101, 108);
+		frmInicio.getContentPane().add(demonioLabel);
+		
+        
+        humanoRB.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+            	if(humanoRB.isSelected()) 
+            		humanoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/humano.png")));
+            	else
+            		humanoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/humano2.png")));
+            }
+        });
+        ogroRB.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+            	if(ogroRB.isSelected()) 
+            		ogroLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/ogro.png")));
+            	else
+            		ogroLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/ogro2.png")));
+            }
+        });
+        elfoRB.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+            	if(elfoRB.isSelected()) 
+            		elfoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/elfo.png")));
+            	else
+            		elfoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/elfo2.png")));
+            }
+        });
+        anaoRB.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+            	if(anaoRB.isSelected()) 
+            		anaoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/anao.png")));
+            	else
+            		anaoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/anao2.png")));
+            }
+        });
+        demonioRB.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+            	if(demonioRB.isSelected()) 
+            		demonioLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/demonio1.png")));
+            	else
+            		demonioLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/demonio22.png")));
+            }
+        });
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnVoltar.setBackground(Color.LIGHT_GRAY);
+		btnVoltar.setBorder(null);
+		btnVoltar.setFont(new Font("Papyrus", Font.BOLD, 12));
+		btnVoltar.setBounds(12, 226, 109, 23);
+		frmInicio.getContentPane().add(btnVoltar);
+		
+		btnVoltar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                frmInicio.dispose();
+                new Registro();
+            }
+        });
 		
 		JButton btnContinuar = new JButton("Continuar");
+		btnContinuar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnContinuar.setBackground(Color.LIGHT_GRAY);
 		btnContinuar.setBorder(null);
 		btnContinuar.setFont(new Font("Papyrus", Font.BOLD, 12));
 		btnContinuar.setBounds(136, 226, 288, 23);
 		frmInicio.getContentPane().add(btnContinuar);
 		
-		JSlider slider = new JSlider();
-		slider.setBackground(Color.DARK_GRAY);
-		slider.setMaximum(1);
-		slider.setValue(0);
-		slider.setBounds(208, 99, 137, 26);
-		frmInicio.getContentPane().add(slider);
+		btnContinuar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                frmInicio.dispose();
+                new TelaCriacao();
+            }
+        });
 		
-		JLabel lblGnero = new JLabel("Gênero:");
-		lblGnero.setHorizontalAlignment(SwingConstants.CENTER);
-		lblGnero.setForeground(Color.WHITE);
-		lblGnero.setFont(new Font("Papyrus", Font.PLAIN, 14));
-		lblGnero.setBounds(208, 63, 137, 14);
-		frmInicio.getContentPane().add(lblGnero);
+		frmInicio.setVisible(true);
 		
-		JLabel lblFem = new JLabel("Fem");
-		lblFem.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblFem.setForeground(Color.LIGHT_GRAY);
-		lblFem.setFont(new Font("Papyrus", Font.PLAIN, 11));
-		lblFem.setBounds(148, 105, 52, 14);
-		frmInicio.getContentPane().add(lblFem);
-		
-		JLabel lblMasc = new JLabel("Masc");
-		lblMasc.setHorizontalAlignment(SwingConstants.LEFT);
-		lblMasc.setForeground(Color.LIGHT_GRAY);
-		lblMasc.setFont(new Font("Papyrus", Font.PLAIN, 11));
-		lblMasc.setBounds(355, 105, 52, 14);
-		frmInicio.getContentPane().add(lblMasc);
-		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/humano.png")));
-		lblNewLabel.setBounds(235, 128, 83, 83);
-		frmInicio.getContentPane().add(lblNewLabel);
-		frmInicio.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaInicio.class.getResource("/imagens/IconNecromante.png")));
-		frmInicio.setTitle("Inicio");
-		frmInicio.setBounds(100, 100, 450, 300);
-		frmInicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }

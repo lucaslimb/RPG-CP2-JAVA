@@ -48,7 +48,6 @@ public class Registro {
 			public void run() {
 				try {
 					Registro window = new Registro();
-					window.frameLogin.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -61,7 +60,7 @@ public class Registro {
 	 */
 	public Registro() {
 		initialize();
-		initializeLogin();
+		//initializeLogin();
 	}
 
 	/**
@@ -71,14 +70,13 @@ public class Registro {
 		frmRegistro = new JFrame();
 		frmRegistro.getContentPane().setBackground(Color.DARK_GRAY);
 		frmRegistro.setTitle("Registro");
-		frmRegistro.addWindowListener(new WindowAdapter() {
+		/*frmRegistro.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowOpened(WindowEvent e) {
 				this.windowGainedFocus(e);
 			}
-		});
+		});*/
 		frmRegistro.setBounds(100, 100, 378, 300);
-		frmRegistro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmRegistro.getContentPane().setLayout(null);
 
 		TextField txtEmail = new TextField();
@@ -87,7 +85,7 @@ public class Registro {
 
 		JLabel labelConfirmaSenha = new JLabel("Confirmar senha");
 		labelConfirmaSenha.setForeground(Color.LIGHT_GRAY);
-		labelConfirmaSenha.setFont(new Font("Marcellus SC", Font.PLAIN, 11));
+		labelConfirmaSenha.setFont(new Font("Papyrus", Font.PLAIN, 11));
 		labelConfirmaSenha.setBounds(10, 160, 342, 14);
 		frmRegistro.getContentPane().add(labelConfirmaSenha);
 
@@ -117,7 +115,7 @@ public class Registro {
 
 		JButton btnRegistrar = new JButton("Registrar");
 		btnRegistrar.setBackground(Color.LIGHT_GRAY);
-		btnRegistrar.setFont(new Font("Marcellus SC", Font.BOLD, 11));
+		btnRegistrar.setFont(new Font("Papyrus", Font.BOLD, 11));
 		btnRegistrar.setBorder(null);
 		btnRegistrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnRegistrar.addActionListener(new ActionListener() {
@@ -128,9 +126,7 @@ public class Registro {
 				confirmaSenha = txtConfirmaSenha.getText();
 				if (senhaRegistro.equals(confirmaSenha)) {
 					frmRegistro.dispose();
-					frameLogin.setBounds(100, 100, 355, 300);
-					frameLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-					frameLogin.setVisible(true);
+					new Login();
 
 				} else {
 					labelConfirmaSenha.setText("Confirmar senha - não coincidem");
@@ -142,27 +138,28 @@ public class Registro {
 
 		JLabel labelSenha = new JLabel("Senha");
 		labelSenha.setForeground(Color.LIGHT_GRAY);
-		labelSenha.setFont(new Font("Marcellus SC", Font.PLAIN, 11));
+		labelSenha.setFont(new Font("Papyrus", Font.PLAIN, 11));
 		labelSenha.setBounds(10, 112, 46, 14);
 		frmRegistro.getContentPane().add(labelSenha);
 
 		JLabel labelEmail = new JLabel("E-mail");
 		labelEmail.setForeground(Color.LIGHT_GRAY);
-		labelEmail.setFont(new Font("Marcellus SC", Font.PLAIN, 11));
+		labelEmail.setFont(new Font("Papyrus", Font.PLAIN, 11));
 		labelEmail.setHorizontalAlignment(SwingConstants.LEFT);
 		labelEmail.setBounds(10, 62, 46, 14);
 		frmRegistro.getContentPane().add(labelEmail);
 
 		JLabel labelNome = new JLabel("Nome");
 		labelNome.setForeground(Color.LIGHT_GRAY);
-		labelNome.setFont(new Font("Marcellus SC", Font.PLAIN, 11));
+		labelNome.setFont(new Font("Papyrus", Font.PLAIN, 11));
 		labelNome.setHorizontalAlignment(SwingConstants.LEFT);
 		labelNome.setBounds(10, 11, 46, 14);
 		frmRegistro.getContentPane().add(labelNome);
-
+		frmRegistro.setVisible(true);
 	}
+}
 
-	void initializeLogin() {
+	/*void initializeLogin() {
 		frameLogin = new JFrame();
 		frameLogin.setBounds(100, 100, 355, 300);
 		frameLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -258,5 +255,7 @@ public class Registro {
 		});
 		btnNovoRegistro.setBounds(10, 227, 113, 23);
 		frameLogin.getContentPane().add(btnNovoRegistro);
+		
+		frmRegistro.setVisible(true);
 	}
-}
+}*/

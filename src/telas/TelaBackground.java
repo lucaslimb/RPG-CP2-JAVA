@@ -102,6 +102,8 @@ public class TelaBackground {
         buttonGroup.add(origem5RB);
 		
 		JLabel origemLabel = new JLabel("");
+		origemLabel.setBackground(Color.GRAY);
+		origemLabel.setToolTipText("Deserto do Arrependimento");
 		origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem.jpg")));
 		origemLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		origemLabel.setForeground(Color.BLACK);
@@ -111,26 +113,31 @@ public class TelaBackground {
 		origem1RB.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem.jpg")));
+                origemLabel.setToolTipText("Deserto do Arrependimento");
             }
         });
         origem2RB.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem1.jpg")));
+                origemLabel.setToolTipText("Castelo Amaldiçoado");
             }
         });
         origem3RB.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem3.jpg")));
+                origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem2.jpg")));
+                origemLabel.setToolTipText("Mar dos Mortos");
             }
         });
         origem4RB.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem4.jpg")));
+                origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem3.jpg")));
+                origemLabel.setToolTipText("Floresta Viva");
             }
         });
         origem5RB.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem5.jpg")));
+                origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem4.jpg")));
+                origemLabel.setToolTipText("Cidade Abandonada");
             }
         });
 		
@@ -225,6 +232,13 @@ public class TelaBackground {
 		btnNewButton_1_1.setBounds(12, 226, 109, 23);
 		frmBackgroundDoHeri.getContentPane().add(btnNewButton_1_1);
 		
+		btnNewButton_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frmBackgroundDoHeri.dispose();
+				new TelaCriacao();
+			}
+		});
+		
 		JButton btnNewButton_1 = new JButton("Confirmar");
 		btnNewButton_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnNewButton_1.setBorder(null);
@@ -232,6 +246,9 @@ public class TelaBackground {
 		btnNewButton_1.setBackground(Color.LIGHT_GRAY);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				
+				
 			}
 		});
 		btnNewButton_1.setFont(new Font("Papyrus", Font.BOLD, 12));
@@ -241,6 +258,8 @@ public class TelaBackground {
 		frmBackgroundDoHeri.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaBackground.class.getResource("/imagens/IconNecromante.png")));
 		frmBackgroundDoHeri.setTitle("Background do herói");
 		frmBackgroundDoHeri.setBounds(100, 100, 450, 300);
-		frmBackgroundDoHeri.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		frmBackgroundDoHeri.setVisible(true);
+	
 	}
 }

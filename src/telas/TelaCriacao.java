@@ -20,7 +20,6 @@ import java.awt.Toolkit;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
@@ -30,9 +29,10 @@ import javax.swing.UIManager;
 public class TelaCriacao {
 
 	private JFrame frmCriaoDeHeri;
-	private JFrame frmBackgroundDoHeri;
 	private String classeNomes[] = { "Bandido", "Bárbaro", "Guerreiro", "Mago", "Necromante" };
 	private ImageIcon classeImagens[];
+	public JSlider slider;
+	public JLabel lblNewLabel;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -63,7 +63,6 @@ public class TelaCriacao {
 		frmCriaoDeHeri.getContentPane().setBackground(Color.DARK_GRAY);
 		frmCriaoDeHeri.setBackground(new Color(240, 240, 240));
 		frmCriaoDeHeri.setBounds(100, 100, 450, 300);
-		frmCriaoDeHeri.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmCriaoDeHeri.getContentPane().setLayout(null);
 
 		// Personagem
@@ -84,21 +83,25 @@ public class TelaCriacao {
 		imagemLabel.setBounds(42, 35, 175, 188);
 		frmCriaoDeHeri.getContentPane().add(imagemLabel);
 
-		JLabel lblNewLabel = new JLabel("Guerreiro");
-		lblNewLabel.setFont(new Font("Monotype Corsiva", Font.PLAIN, 20));
-		lblNewLabel.setForeground(Color.RED);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(10, 227, 200, 23);
-		frmCriaoDeHeri.getContentPane().add(lblNewLabel);
+		JLabel testeLabel = new JLabel("Guerreiro");
+		testeLabel.setFont(new Font("Monotype Corsiva", Font.PLAIN, 20));
+		testeLabel.setForeground(Color.RED);
+		testeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		testeLabel.setBounds(10, 227, 200, 23);
+		frmCriaoDeHeri.getContentPane().add(testeLabel);
+
+		
 
 		slider.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent e) {
 				int index = slider.getValue();
-				lblNewLabel.setText(classeNomes[index]);
+				testeLabel.setText(classeNomes[index]);
 				imagemLabel.setIcon(classeImagens[index]);
 			}
 		});
+				
 
+		
 		// Distribuição de pontos
 		JSpinner spinnerF = new JSpinner();
 		spinnerF.setBorder(null);
@@ -232,26 +235,31 @@ public class TelaCriacao {
 			btnNewButton.setBorder(null);
 			btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnNewButton.setFont(new Font("Papyrus", Font.BOLD, 11));
-			btnNewButton.setBounds(334, 227, 75, 23);
+			btnNewButton.setBounds(329, 227, 80, 23);
 			frmCriaoDeHeri.getContentPane().add(btnNewButton);
+			
+			btnNewButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					 frmCriaoDeHeri.dispose();
+		             new TelaBackground();
+				}
+			});
 			
 			JButton btnVoltar = new JButton("Voltar");
 			btnVoltar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnVoltar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					 frmCriaoDeHeri.dispose();
+		             new TelaInicio();
 				}
 			});
-			btnVoltar.setFont(new Font("Dialog", Font.BOLD, 11));
+			btnVoltar.setFont(new Font("Papyrus", Font.BOLD, 11));
 			btnVoltar.setBorder(null);
 			btnVoltar.setBackground(Color.LIGHT_GRAY);
-			btnVoltar.setBounds(268, 227, 59, 23);
+			btnVoltar.setBounds(268, 227, 51, 23);
 			frmCriaoDeHeri.getContentPane().add(btnVoltar);
 			
-			btnNewButton.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
 			
-				}
-			});
 	    
 	}
 }
