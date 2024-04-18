@@ -167,7 +167,7 @@ public class TelaBackground {
             public void actionPerformed(ActionEvent e) {
                 origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem0.png")));
                 origemLabel.setToolTipText("Desconhecido");
-                escolhaOrigem = "um lugar desconhecido";
+                escolhaOrigem = "algum lugar";
             }
         });
 		
