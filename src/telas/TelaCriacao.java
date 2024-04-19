@@ -89,7 +89,7 @@ public class TelaCriacao {
 	private void initialize() {
 		frmCriarHeroi = new JFrame();
 		frmCriarHeroi.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaCriacao.class.getResource("/imagens/IconNecromante.png")));
-		frmCriarHeroi.setTitle("Criação do herói");
+		frmCriarHeroi.setTitle("Classe do personagem");
 		frmCriarHeroi.getContentPane().setBackground(Color.DARK_GRAY);
 		frmCriarHeroi.setBackground(new Color(240, 240, 240));
 		frmCriarHeroi.setBounds(100, 100, 450, 300);

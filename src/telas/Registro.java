@@ -1,4 +1,5 @@
 package telas;
+
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.EventQueue;
@@ -17,6 +18,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JPasswordField;
 import java.awt.Toolkit;
+import javax.swing.JFormattedTextField;
 
 public class Registro {
 
@@ -26,7 +28,7 @@ public class Registro {
 	private String confirmaSenha;
 	private String nome;
 	private static String emailRegistro;
-	
+
 	public static String getSenhaRegistro() {
 		return senhaRegistro;
 	}
@@ -73,7 +75,7 @@ public class Registro {
 	 */
 	public Registro() {
 		initialize();
-		//initializeLogin();
+		// initializeLogin();
 	}
 
 	/**
@@ -81,7 +83,8 @@ public class Registro {
 	 */
 	private void initialize() {
 		frmRegistro = new JFrame();
-		frmRegistro.setIconImage(Toolkit.getDefaultToolkit().getImage(Registro.class.getResource("/imagens/IconNecromante.png")));
+		frmRegistro.setIconImage(
+				Toolkit.getDefaultToolkit().getImage(Registro.class.getResource("/imagens/IconNecromante.png")));
 		frmRegistro.getContentPane().setBackground(Color.DARK_GRAY);
 		frmRegistro.setTitle("Registro");
 		frmRegistro.setBounds(100, 100, 378, 300);
@@ -100,38 +103,15 @@ public class Registro {
 		TextField txtNome = new TextField();
 		txtNome.setBounds(10, 31, 342, 22);
 		frmRegistro.getContentPane().add(txtNome);
-		
+
 		passwordField_Senha = new JPasswordField();
 		passwordField_Senha.setBounds(10, 129, 342, 20);
 		frmRegistro.getContentPane().add(passwordField_Senha);
-		
+
 		passwordField_ConfirmaSenha = new JPasswordField();
 		passwordField_ConfirmaSenha.setBounds(10, 181, 342, 20);
 		frmRegistro.getContentPane().add(passwordField_ConfirmaSenha);
 		frmRegistro.setVisible(true);
-
-		JButton btnRegistrar = new JButton("Registrar");
-		btnRegistrar.setBackground(Color.LIGHT_GRAY);
-		btnRegistrar.setFont(new Font("Papyrus", Font.BOLD, 11));
-		btnRegistrar.setBorder(null);
-		btnRegistrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnRegistrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				nome = txtNome.getText();
-				emailRegistro = txtEmail.getText();
-				senhaRegistro = passwordField_Senha.getText();
-				confirmaSenha = passwordField_ConfirmaSenha.getText();
-				if (confirmaSenha.equals(senhaRegistro)) {
-					frmRegistro.dispose();
-					frmRegistro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-					Login.main(null);
-				} else {
-					labelConfirmaSenha.setText("Confirmar senha - não coincidem");
-				}
-			}
-		});
-		btnRegistrar.setBounds(263, 227, 89, 23);
-		frmRegistro.getContentPane().add(btnRegistrar);
 
 		JLabel labelSenha = new JLabel("Senha");
 		labelSenha.setForeground(Color.LIGHT_GRAY);
@@ -143,7 +123,7 @@ public class Registro {
 		labelEmail.setForeground(Color.LIGHT_GRAY);
 		labelEmail.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		labelEmail.setHorizontalAlignment(SwingConstants.LEFT);
-		labelEmail.setBounds(10, 62, 46, 14);
+		labelEmail.setBounds(10, 62, 342, 14);
 		frmRegistro.getContentPane().add(labelEmail);
 
 		JLabel labelNome = new JLabel("Nome");
@@ -152,8 +132,49 @@ public class Registro {
 		labelNome.setHorizontalAlignment(SwingConstants.LEFT);
 		labelNome.setBounds(10, 11, 46, 14);
 		frmRegistro.getContentPane().add(labelNome);
-		
-		
+
+		JButton btnRegistrar = new JButton("Registrar");
+		btnRegistrar.setBackground(Color.LIGHT_GRAY);
+		btnRegistrar.setFont(new Font("Papyrus", Font.BOLD, 11));
+		btnRegistrar.setBorder(null);
+		btnRegistrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+		JLabel atencao = new JLabel("");
+		atencao.setForeground(Color.WHITE);
+		atencao.setFont(new Font("Papyrus", Font.PLAIN, 12));
+		atencao.setHorizontalAlignment(SwingConstants.CENTER);
+		atencao.setBounds(10, 227, 243, 23);
+		frmRegistro.getContentPane().add(atencao);
+
+		btnRegistrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				nome = txtNome.getText();
+				emailRegistro = txtEmail.getText();
+				senhaRegistro = passwordField_Senha.getText();
+				confirmaSenha = passwordField_ConfirmaSenha.getText();
+
+				if (nome.isBlank() || emailRegistro.isBlank() || senhaRegistro.isBlank() || confirmaSenha.isBlank())
+					atencao.setText("Preencha todos os campos!");
+				else {
+					if (!emailRegistro.contains("@") || !emailRegistro.contains(".")) {
+						if (!confirmaSenha.equals(senhaRegistro)) {
+							labelEmail.setText("Insira um e-mail válido");
+							labelConfirmaSenha.setText("Confirmar senha: não coincidem");
+						} else {
+							labelEmail.setText("Insira um e-mail válido");
+						}
+					} else if (!confirmaSenha.equals(senhaRegistro)) {
+						labelConfirmaSenha.setText("Confirmar senha: não coincidem");
+					} else {
+						frmRegistro.dispose();
+						frmRegistro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+						Login.main(null);
+					}
+				}
+			}
+		});
+		btnRegistrar.setBounds(263, 227, 89, 23);
+		frmRegistro.getContentPane().add(btnRegistrar);
+
 	}
 }
-

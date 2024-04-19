@@ -152,7 +152,7 @@ public class Login {
 						labelSenha.setText("Senha errada");
 					}
 				} else {
-					labelEmail.setText("Email errado");
+					labelEmail.setText("Email inválido");
 				}
 			}
 		});

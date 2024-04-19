@@ -30,6 +30,8 @@ public class TelaBackground {
 	private static String mtvA;
 	private static String mtvC;
 	private static String mtvN;
+	private boolean btnSelecionado = false;
+	private boolean btnSelecionado2 = false;
 	
 	static String getEscolhaOrigem() {
 		return escolhaOrigem;
@@ -77,8 +79,41 @@ public class TelaBackground {
 		frmBackgroundDoHeri.getContentPane().setBackground(Color.DARK_GRAY);
 		frmBackgroundDoHeri.getContentPane().setLayout(null);
 		frmBackgroundDoHeri.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaBackground.class.getResource("/imagens/IconNecromante.png")));
-		frmBackgroundDoHeri.setTitle("Background do herói");
+		frmBackgroundDoHeri.setTitle("Background do personagem");
 		frmBackgroundDoHeri.setBounds(100, 100, 450, 300);
+		
+	//Botões continuar e voltar
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnVoltar.setBorder(null);
+		btnVoltar.setBackground(Color.LIGHT_GRAY);
+		btnVoltar.setFont(new Font("Papyrus", Font.BOLD, 12));
+		btnVoltar.setBounds(12, 226, 109, 23);
+		frmBackgroundDoHeri.getContentPane().add(btnVoltar);
+		
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frmBackgroundDoHeri.dispose();
+				TelaCriacao.main(null);
+			}
+		});
+		
+		JButton btnContinuar = new JButton("Confirmar");
+		btnContinuar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnContinuar.setBorder(null);
+		btnContinuar.setForeground(Color.BLACK);
+		btnContinuar.setBackground(Color.LIGHT_GRAY);
+		btnContinuar.setFont(new Font("Papyrus", Font.BOLD, 12));
+		btnContinuar.setBounds(136, 226, 288, 23);
+		btnContinuar.setEnabled(false);
+		frmBackgroundDoHeri.getContentPane().add(btnContinuar);
+		btnContinuar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frmBackgroundDoHeri.dispose();
+				TelaGeral.main(null);	
+			}
+		});
 		
 		//Escolha da origem - imagens/radio buttons
 		
@@ -140,6 +175,8 @@ public class TelaBackground {
                 origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem.jpg")));
                 origemLabel.setToolTipText("Deserto do Arrependimento");
                 escolhaOrigem = "o Deserto";
+                btnSelecionado = true;
+                
             }
         });
         origem2RB.addActionListener(new ActionListener() {
@@ -147,6 +184,7 @@ public class TelaBackground {
                 origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem4.jpg")));
                 origemLabel.setToolTipText("Cidade Abandonada");
                 escolhaOrigem = "a Cidade";
+                btnSelecionado = true;
             }
         });
         origem3RB.addActionListener(new ActionListener() {
@@ -154,6 +192,7 @@ public class TelaBackground {
                 origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem2.jpg")));
                 origemLabel.setToolTipText("Mar dos Mortos");
                 escolhaOrigem = "o Mar";
+                btnSelecionado = true;
             }
         });
         origem4RB.addActionListener(new ActionListener() {
@@ -161,6 +200,7 @@ public class TelaBackground {
                 origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem3.jpg")));
                 origemLabel.setToolTipText("Floresta Viva");
                 escolhaOrigem = "a Floresta";
+                btnSelecionado = true;
             }
         });
         origem5RB.addActionListener(new ActionListener() {
@@ -168,6 +208,7 @@ public class TelaBackground {
                 origemLabel.setIcon(new ImageIcon(TelaBackground.class.getResource("/imagens/origem0.png")));
                 origemLabel.setToolTipText("Desconhecido");
                 escolhaOrigem = "algum lugar";
+                btnSelecionado = true;
             }
         });
 		
@@ -242,6 +283,7 @@ public class TelaBackground {
 		ActionListener checkListener = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (checkN.isSelected()) {
+                	btnSelecionado2 = true;
                 	mtvN = "por nada";
                     checkF.setEnabled(false);
                     checkP.setEnabled(false);
@@ -261,24 +303,34 @@ public class TelaBackground {
                      checkA.setEnabled(true);
                      checkC.setEnabled(true);
                 }
-                if(checkF.isSelected())
+                if(checkF.isSelected()) {
                 	mtvF = "pela família";
+                	btnSelecionado2 = true;
+                	}
                 else
                 	mtvF = "0";
-                if(checkP.isSelected())
+                if(checkP.isSelected()) {
                 	mtvP = "pelo poder";
+                	btnSelecionado2 = true;
+                	}
                 else
                 	mtvP = "0";
-                if(checkV.isSelected())
+                if(checkV.isSelected()) {
                 	mtvV = "pela vingança";
+                	btnSelecionado2 = true;
+                	}
                 else
                 	mtvV = "0";
-                if(checkA.isSelected())
+                if(checkA.isSelected()) {
                 	mtvA = "por alimento";
+                	btnSelecionado2 = true;
+                	}
                 else
                 	mtvA = "0";
-                if(checkC.isSelected())
+                if(checkC.isSelected()) {
                 	mtvC = "pelo conhecimento";
+                	btnSelecionado2 = true;
+                	}
                 else
                 	mtvC = "0";
             }
@@ -290,39 +342,32 @@ public class TelaBackground {
         checkA.addActionListener(checkListener);
         checkC.addActionListener(checkListener);
         checkN.addActionListener(checkListener);
-
-		//Botões continuar e voltar
-		
-		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnVoltar.setBorder(null);
-		btnVoltar.setBackground(Color.LIGHT_GRAY);
-		btnVoltar.setFont(new Font("Papyrus", Font.BOLD, 12));
-		btnVoltar.setBounds(12, 226, 109, 23);
-		frmBackgroundDoHeri.getContentPane().add(btnVoltar);
-		
-		btnVoltar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frmBackgroundDoHeri.dispose();
-				TelaCriacao.main(null);
-			}
-		});
-		
-		JButton btnContinuar = new JButton("Confirmar");
-		btnContinuar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnContinuar.setBorder(null);
-		btnContinuar.setForeground(Color.BLACK);
-		btnContinuar.setBackground(Color.LIGHT_GRAY);
-		btnContinuar.setFont(new Font("Papyrus", Font.BOLD, 12));
-		btnContinuar.setBounds(136, 226, 288, 23);
-		frmBackgroundDoHeri.getContentPane().add(btnContinuar);
-		btnContinuar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frmBackgroundDoHeri.dispose();
-				TelaGeral.main(null);	
-			}
-		});
-		
+        
+        //verificação se as opções foram selecionadas
+        
+        ActionListener btnListener = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+          
+                boolean rb = origem1RB.isSelected() || origem2RB.isSelected() || origem3RB.isSelected() || origem4RB.isSelected() || origem5RB.isSelected();
+        
+                boolean cb = checkF.isSelected() || checkP.isSelected() || checkV.isSelected() || checkA.isSelected() || checkC.isSelected() || checkN.isSelected();
+              
+                btnContinuar.setEnabled(rb && cb);
+            }
+        };
+        
+        checkF.addActionListener(btnListener);
+        checkP.addActionListener(btnListener);
+        checkV.addActionListener(btnListener);
+        checkA.addActionListener(btnListener);
+        checkC.addActionListener(btnListener);
+        checkN.addActionListener(btnListener);
+        origem1RB.addActionListener(btnListener);
+        origem2RB.addActionListener(btnListener);
+        origem3RB.addActionListener(btnListener);
+        origem4RB.addActionListener(btnListener);
+        origem5RB.addActionListener(btnListener);
+        
 		frmBackgroundDoHeri.setVisible(true);
 	
 	}

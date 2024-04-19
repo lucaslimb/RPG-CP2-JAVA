@@ -32,6 +32,7 @@ public class TelaInicio {
 	private JTextField txtNomeHeroi;
 	private static String nomeHeroi;
 	private static String escolhaRaca;
+	private String nome;
 	
 	public static String getNomeHeroi() {
 		return nomeHeroi;
@@ -261,6 +262,7 @@ public class TelaInicio {
 		btnContinuar.setBorder(null);
 		btnContinuar.setFont(new Font("Papyrus", Font.BOLD, 12));
 		btnContinuar.setBounds(136, 226, 288, 23);
+		btnContinuar.setEnabled(false);
 		frmInicio.getContentPane().add(btnContinuar);
 		
 		btnContinuar.addActionListener(new ActionListener() {
@@ -270,6 +272,26 @@ public class TelaInicio {
             }
         });
 		
+		//verificação se as opções foram selecionadas
+		
+		ActionListener btnListener = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+          
+                boolean rb = demonioRB.isSelected() || humanoRB.isSelected() || ogroRB.isSelected() || anaoRB.isSelected() || elfoRB.isSelected();
+                nome = txtNomeHeroi.getText();
+                
+                btnContinuar.setEnabled(rb && !(nome.isBlank()));
+                	
+            }
+        };
+        
+        demonioRB.addActionListener(btnListener);
+        humanoRB.addActionListener(btnListener);
+        ogroRB.addActionListener(btnListener);
+        anaoRB.addActionListener(btnListener);
+        elfoRB.addActionListener(btnListener);
+        txtNomeHeroi.addActionListener(btnListener);
+        
 		frmInicio.setVisible(true);
 		
 	}
