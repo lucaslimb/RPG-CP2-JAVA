@@ -87,7 +87,7 @@ public class Registro {
 				Toolkit.getDefaultToolkit().getImage(Registro.class.getResource("/imagens/IconNecromante.png")));
 		frmRegistro.getContentPane().setBackground(Color.DARK_GRAY);
 		frmRegistro.setTitle("Registro");
-		frmRegistro.setBounds(100, 100, 378, 300);
+		frmRegistro.setBounds(450, 200, 378, 300);
 		frmRegistro.getContentPane().setLayout(null);
 
 		TextField txtEmail = new TextField();

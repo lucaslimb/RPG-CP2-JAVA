@@ -77,7 +77,7 @@ public class Login {
 		frameLogin.setIconImage(
 				Toolkit.getDefaultToolkit().getImage(Login.class.getResource("/imagens/IconNecromante.png")));
 		frameLogin.setTitle("Login");
-		frameLogin.setBounds(100, 100, 355, 300);
+		frameLogin.setBounds(450, 200, 355, 300);
 		frameLogin.getContentPane().setLayout(null);
 		frameLogin.setVisible(true);
 		frameLogin.addWindowListener(new WindowAdapter() {

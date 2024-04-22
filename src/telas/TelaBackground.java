@@ -80,7 +80,7 @@ public class TelaBackground {
 		frmBackgroundDoHeri.getContentPane().setLayout(null);
 		frmBackgroundDoHeri.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaBackground.class.getResource("/imagens/IconNecromante.png")));
 		frmBackgroundDoHeri.setTitle("Background do personagem");
-		frmBackgroundDoHeri.setBounds(100, 100, 450, 300);
+		frmBackgroundDoHeri.setBounds(450, 200, 450, 300);
 		
 	//Botões continuar e voltar
 		
@@ -89,7 +89,7 @@ public class TelaBackground {
 		btnVoltar.setBorder(null);
 		btnVoltar.setBackground(Color.LIGHT_GRAY);
 		btnVoltar.setFont(new Font("Papyrus", Font.BOLD, 12));
-		btnVoltar.setBounds(12, 226, 109, 23);
+		btnVoltar.setBounds(500, 200, 109, 23);
 		frmBackgroundDoHeri.getContentPane().add(btnVoltar);
 		
 		btnVoltar.addActionListener(new ActionListener() {

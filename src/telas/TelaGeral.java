@@ -55,7 +55,7 @@ public class TelaGeral {
 		frmCard.setTitle("Card do personagem");
 		frmCard.getContentPane().setBackground(Color.DARK_GRAY);
 
-		frmCard.setBounds(100, 100, 450, 300);
+		frmCard.setBounds(450, 200, 450, 300);
 		frmCard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmCard.getContentPane().setLayout(null);
 

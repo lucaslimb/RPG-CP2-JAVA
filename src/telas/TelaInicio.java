@@ -67,7 +67,7 @@ public class TelaInicio {
 		frmInicio.getContentPane().setLayout(null);
 		frmInicio.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaInicio.class.getResource("/imagens/IconNecromante.png")));
 		frmInicio.setTitle("Inicio");
-		frmInicio.setBounds(100, 100, 450, 300);
+		frmInicio.setBounds(450, 200, 450, 300);
 		frmInicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//Nome do herói
