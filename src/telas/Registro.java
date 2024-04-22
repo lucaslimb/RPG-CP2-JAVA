@@ -83,6 +83,7 @@ public class Registro {
 	 */
 	private void initialize() {
 		frmRegistro = new JFrame();
+		frmRegistro.setResizable(false);
 		frmRegistro.setIconImage(
 				Toolkit.getDefaultToolkit().getImage(Registro.class.getResource("/imagens/IconNecromante.png")));
 		frmRegistro.getContentPane().setBackground(Color.DARK_GRAY);
