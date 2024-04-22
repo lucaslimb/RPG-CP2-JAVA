@@ -72,6 +72,7 @@ public class Login {
 	 */
 	void initialize() {
 		frameLogin = new JFrame();
+		frameLogin.setResizable(false);
 		frameLogin.getContentPane().setFont(new Font("Papyrus", Font.PLAIN, 12));
 		frameLogin.getContentPane().setBackground(Color.DARK_GRAY);
 		frameLogin.setIconImage(
