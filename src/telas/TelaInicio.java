@@ -188,7 +188,7 @@ public class TelaInicio {
             public void stateChanged(ChangeEvent e) {
             	if(humanoRB.isSelected()) {
             		humanoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/humano.png")));
-            		escolhaRaca = "humano";
+            		escolhaRaca = "Humano";
             	}
             	else
             		humanoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/humano2.png")));
@@ -198,7 +198,7 @@ public class TelaInicio {
             public void stateChanged(ChangeEvent e) {
             	if(ogroRB.isSelected()) {
             		ogroLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/ogro.png")));
-            		escolhaRaca = "ogro";
+            		escolhaRaca = "Ogro";
             	}
             	else
             		ogroLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/ogro2.png")));
@@ -208,7 +208,7 @@ public class TelaInicio {
             public void stateChanged(ChangeEvent e) {
             	if(elfoRB.isSelected()) {
             		elfoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/elfo.png")));
-            		escolhaRaca = "elfo";
+            		escolhaRaca = "Elfo";
             	}
             	else
             		elfoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/elfo2.png")));
@@ -218,7 +218,7 @@ public class TelaInicio {
             public void stateChanged(ChangeEvent e) {
             	if(anaoRB.isSelected()) {
             		anaoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/anao.png")));
-            		escolhaRaca = "anão";
+            		escolhaRaca = "Anão";
             	}
             	else
             		anaoLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/anao2.png")));
@@ -228,7 +228,7 @@ public class TelaInicio {
             public void stateChanged(ChangeEvent e) {
             	if(demonioRB.isSelected()) {
             		demonioLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/demonio1.png")));
-            		escolhaRaca = "demônio";
+            		escolhaRaca = "Demônio";
             	}
             	else
             		demonioLabel.setIcon(new ImageIcon(TelaInicio.class.getResource("/imagens/demonio22.png")));

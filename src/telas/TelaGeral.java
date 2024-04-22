@@ -1,31 +1,45 @@
 package telas;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextArea;
-import javax.swing.SwingConstants;
 import java.awt.Color;
-import javax.swing.JButton;
+import java.awt.ComponentOrientation;
+import java.awt.Cursor;
+import java.awt.EventQueue;
 import java.awt.Font;
-import javax.swing.JSeparator;
-import javax.swing.ImageIcon;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
-import java.awt.Cursor;
-import java.awt.ComponentOrientation;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
+
+import metodos.ArmazenamentoPersonagens;
+import metodos.Personagem;
 
 public class TelaGeral {
 
 	private JFrame frmCard;
-
-	/**
-	 * Launch the application.
-	 */
+	private String classe;
+	private String notaFinal;
+	private String raca;
+	private String nomePersonagem;
+	
+	private void SalvarPersonagem(String nomePersonagem, String classe, String raca, String rating) {
+		String nome = nomePersonagem;
+		String classe1 = classe; 
+		String raca1 = raca;
+		String rating1 = rating;
+		Personagem personagem = new Personagem(nome, classe1, raca1, rating1);
+		
+		ArmazenamentoPersonagens.adicionarPersonagem(personagem);
+		
+	}
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -39,16 +53,10 @@ public class TelaGeral {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public TelaGeral() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frmCard = new JFrame();
 		frmCard.setResizable(false);
@@ -63,9 +71,9 @@ public class TelaGeral {
 		//Texto do personagem
 
 		String origem = TelaBackground.getEscolhaOrigem();
-		String raca = TelaInicio.getEscolhaRaca();
+		raca = TelaInicio.getEscolhaRaca();
 		
-		String classe = TelaCriacao.getEscolhaClasse();
+		classe = TelaCriacao.getEscolhaClasse();
 		if(classe == null)
 			classe = "Guerreiro";
 		
@@ -122,15 +130,15 @@ public class TelaGeral {
 		textoHeroi.setForeground(Color.LIGHT_GRAY);
 		textoHeroi.setLineWrap(true);
 		textoHeroi.setFont(new Font("Papyrus", Font.PLAIN, 12));
-		textoHeroi.setText("Motivado " + numMtv + " " + motivo + ", o " + raca + " " + classe.toLowerCase() + 
-				" conhecido como " + nome + ", deixou " + origem + " e veio a este Mundo para se erguer como uma lenda, ou cair no eterno esquecimento");
+		textoHeroi.setText("Motivado " + numMtv + " " + motivo + ", o " + raca.toLowerCase() + " " + classe.toLowerCase() + 
+				" conhecido como " + nome + ", deixou " + origem + " e veio a este Mundo enfrentar suas provações");
 		textoHeroi.setEditable(false);
 		textoHeroi.setBackground(Color.DARK_GRAY);
-		textoHeroi.setBounds(300, 11, 123, 201);
+		textoHeroi.setBounds(300, 11, 123, 168);
 		frmCard.getContentPane().add(textoHeroi);
 
 		// Nome do personagem.
-		String nomePersonagem = TelaInicio.getNomeHeroi();
+		nomePersonagem = TelaInicio.getNomeHeroi();
 		
 		JLabel nomeHeroi = new JLabel(nomePersonagem);
 		nomeHeroi.setHorizontalAlignment(SwingConstants.CENTER);
@@ -161,7 +169,7 @@ public class TelaGeral {
 		JLabel imagemClasse = new JLabel("");
 		imagemClasse.setHorizontalAlignment(SwingConstants.CENTER);
 		imagemClasse.setIcon(new ImageIcon(TelaGeral.class.getResource(caminhoImagem)));
-		imagemClasse.setBounds(124, 33, 190, 216);
+		imagemClasse.setBounds(132, 39, 177, 183);
 		frmCard.getContentPane().add(imagemClasse);
 
 		//Pontos do personagem
@@ -216,7 +224,7 @@ public class TelaGeral {
 		int notaV = 0;
 		int somaNotas = 0;
 		double mediaNotas = 0;
-		String notaFinal = "";
+		notaFinal = "";
 
 		
 		JLabel pontosF = new JLabel("" + totalF);
@@ -863,19 +871,64 @@ public class TelaGeral {
 			}
 		});
 		
-		JButton btnSair = new JButton("Sair");
-		btnSair.setBorder(null);
-		btnSair.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnSair.setForeground(Color.BLACK);
-		btnSair.setBackground(Color.LIGHT_GRAY);
-		btnSair.setFont(new Font("Papyrus", Font.BOLD, 12));
-		btnSair.setBounds(300, 226, 123, 23);
-		frmCard.getContentPane().add(btnSair);
+		JButton btnSalvar = new JButton("Salvar");
+		btnSalvar.setBorder(null);
+		btnSalvar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnSalvar.setForeground(Color.BLACK);
+		btnSalvar.setBackground(Color.LIGHT_GRAY);
+		btnSalvar.setFont(new Font("Papyrus", Font.BOLD, 12));
+		btnSalvar.setBounds(142, 226, 153, 23);
+		frmCard.getContentPane().add(btnSalvar);
 		
-		btnSair.addActionListener(new ActionListener() {
+		JButton btnVerMeus = new JButton("Meus personagens");
+		btnVerMeus.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnVerMeus.setForeground(Color.BLACK);
+		btnVerMeus.setFont(new Font("Papyrus", Font.BOLD, 12));
+		btnVerMeus.setBorder(null);
+		btnVerMeus.setBackground(Color.LIGHT_GRAY);
+		btnVerMeus.setBounds(300, 226, 123, 23);
+		btnVerMeus.setEnabled(false);
+		if(ArmazenamentoPersonagens.getPersonagens().size() > 0) {
+			btnVerMeus.setEnabled(true);
+		}
+		frmCard.getContentPane().add(btnVerMeus);
+		
+		
+		btnVerMeus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmCard.dispose();	
+				frmCard.dispose();
+				TelaHerois.main(null);
+
 			}
 		});
+		
+		JButton btnNovo = new JButton("Criar novo");
+		btnNovo.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnNovo.setForeground(Color.BLACK);
+		btnNovo.setFont(new Font("Papyrus", Font.BOLD, 12));
+		btnNovo.setBorder(null);
+		btnNovo.setBackground(Color.LIGHT_GRAY);
+		btnNovo.setBounds(300, 199, 123, 23);
+		frmCard.getContentPane().add(btnNovo);
+		
+		btnNovo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+						frmCard.dispose();
+						TelaInicio.main(null);
+			}
+		});
+		
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				SalvarPersonagem(nomePersonagem, classe, raca, notaFinal);
+				btnSalvar.setText("Salvo!");
+				if(ArmazenamentoPersonagens.getPersonagens().size() == 3)
+					btnNovo.setEnabled(false);
+				btnVerMeus.setEnabled(true);
+				btnVoltar.setEnabled(false);
+				btnSalvar.setEnabled(false);
+			}
+		});
+		
 	}
 }

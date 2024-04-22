@@ -25,12 +25,6 @@ public class Login {
 	private JPasswordField passwordField;
 	private TextField textFieldEmail;
 
-
-
-	/**
-	 * Launch the application.
-	 */
-
 	public void addPlaceholderStyle(TextField textField) {
 		Font font = textField.getFont();
 		font = font.deriveFont(Font.ITALIC);
@@ -60,16 +54,10 @@ public class Login {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public Login() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	void initialize() {
 		frameLogin = new JFrame();
 		frameLogin.setResizable(false);
@@ -88,6 +76,13 @@ public class Login {
 				this.windowGainedFocus(e);
 			}
 		});
+		
+		JLabel labelTitulo = new JLabel("BuildMaker");
+		labelTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+		labelTitulo.setForeground(Color.RED);
+		labelTitulo.setFont(new Font("Papyrus", Font.BOLD, 23));
+		labelTitulo.setBounds(10, 11, 319, 32);
+		frameLogin.getContentPane().add(labelTitulo);
 
 		JLabel labelLogin = new JLabel("Login");
 		labelLogin.setForeground(Color.WHITE);
@@ -151,8 +146,8 @@ public class Login {
 						frameLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 						TelaInicio.main(null);
 					} else {
-						labelSenha.setText("Senha errada");
-					}
+						labelSenha.setText("Senha incorreta");
+						}
 				} else {
 					labelEmail.setText("Email inválido");
 				}
@@ -160,8 +155,6 @@ public class Login {
 		});
 		btnEntrar.setBounds(235, 227, 89, 23);
 		frameLogin.getContentPane().add(btnEntrar);
-
-
 
 		JButton btnNovoRegistro = new JButton("Registre-se");
 		btnNovoRegistro.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -178,13 +171,6 @@ public class Login {
 		btnNovoRegistro.setBounds(10, 227, 113, 23);
 		frameLogin.getContentPane().add(btnNovoRegistro);
 
-		JLabel labelTitulo = new JLabel("BuildMaker");
-		labelTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		labelTitulo.setForeground(Color.RED);
-		labelTitulo.setFont(new Font("Papyrus", Font.BOLD, 23));
-		labelTitulo.setBounds(10, 11, 319, 32);
-		frameLogin.getContentPane().add(labelTitulo);
-		
 		passwordField = new JPasswordField();
 		passwordField.setBounds(5, 172, 324, 20);
 		frameLogin.getContentPane().add(passwordField);
