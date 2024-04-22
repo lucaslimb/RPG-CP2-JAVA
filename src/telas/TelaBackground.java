@@ -75,6 +75,7 @@ public class TelaBackground {
 
 	private void initialize() {
 		frmBackgroundDoHeri = new JFrame();
+		frmBackgroundDoHeri.setResizable(false);
 		frmBackgroundDoHeri.getContentPane().setFont(new Font("Marcellus SC", Font.PLAIN, 11));
 		frmBackgroundDoHeri.getContentPane().setBackground(Color.DARK_GRAY);
 		frmBackgroundDoHeri.getContentPane().setLayout(null);
