@@ -90,7 +90,7 @@ public class TelaBackground {
 		btnVoltar.setBorder(null);
 		btnVoltar.setBackground(Color.LIGHT_GRAY);
 		btnVoltar.setFont(new Font("Papyrus", Font.BOLD, 12));
-		btnVoltar.setBounds(500, 200, 109, 23);
+		btnVoltar.setBounds(11, 226, 109, 23);
 		frmBackgroundDoHeri.getContentPane().add(btnVoltar);
 		
 		btnVoltar.addActionListener(new ActionListener() {
