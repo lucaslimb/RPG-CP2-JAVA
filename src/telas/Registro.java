@@ -89,6 +89,7 @@ public class Registro {
 		frmRegistro.getContentPane().setBackground(Color.DARK_GRAY);
 		frmRegistro.setTitle("Registro");
 		frmRegistro.setBounds(450, 200, 378, 300);
+		frmRegistro.setLocationRelativeTo(null);
 		frmRegistro.getContentPane().setLayout(null);
 
 		TextField txtEmail = new TextField();

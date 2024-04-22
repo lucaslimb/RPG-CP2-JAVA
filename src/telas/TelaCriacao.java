@@ -94,6 +94,7 @@ public class TelaCriacao {
 		frmCriarHeroi.getContentPane().setBackground(Color.DARK_GRAY);
 		frmCriarHeroi.setBackground(new Color(240, 240, 240));
 		frmCriarHeroi.setBounds(450, 200, 450, 300);
+		frmCriarHeroi.setLocationRelativeTo(null);
 		frmCriarHeroi.getContentPane().setLayout(null);
 
 		// Escolha da classe - slider/imagens

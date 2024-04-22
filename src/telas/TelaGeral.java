@@ -55,8 +55,8 @@ public class TelaGeral {
 		frmCard.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaGeral.class.getResource("/imagens/IconNecromante.png")));
 		frmCard.setTitle("Card do personagem");
 		frmCard.getContentPane().setBackground(Color.DARK_GRAY);
-
 		frmCard.setBounds(450, 200, 450, 300);
+		frmCard.setLocationRelativeTo(null);
 		frmCard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmCard.getContentPane().setLayout(null);
 

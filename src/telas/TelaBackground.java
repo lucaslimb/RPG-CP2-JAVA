@@ -82,6 +82,8 @@ public class TelaBackground {
 		frmBackgroundDoHeri.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaBackground.class.getResource("/imagens/IconNecromante.png")));
 		frmBackgroundDoHeri.setTitle("Background do personagem");
 		frmBackgroundDoHeri.setBounds(450, 200, 450, 300);
+		frmBackgroundDoHeri.setLocationRelativeTo(null);
+
 		
 	//Botões continuar e voltar
 		

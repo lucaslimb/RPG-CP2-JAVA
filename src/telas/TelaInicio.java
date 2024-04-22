@@ -70,6 +70,8 @@ public class TelaInicio {
 		frmInicio.setTitle("Inicio");
 		frmInicio.setBounds(450, 200, 450, 300);
 		frmInicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmInicio.setLocationRelativeTo(null);
+
 		
 		//Nome do herói
 		
