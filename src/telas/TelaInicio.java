@@ -84,14 +84,6 @@ public class TelaInicio {
 		frmInicio.getContentPane().add(txtNomeHeroi);
 		txtNomeHeroi.setColumns(10);
 		
-		txtNomeHeroi.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-		        if (txtNomeHeroi.getText().length() > 10) 
-		            txtNomeHeroi.setText(txtNomeHeroi.getText().substring(0, 10));
-                nomeHeroi = txtNomeHeroi.getText();
-            }
-        });
-		
 		//Escolha da raça - imagens e botões
 		
 		JLabel lblRaa = new JLabel("Raça");
@@ -267,6 +259,7 @@ public class TelaInicio {
 		
 		btnContinuar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	nomeHeroi = txtNomeHeroi.getText();
                 frmInicio.dispose();
                 TelaCriacao.main(null);
             }
