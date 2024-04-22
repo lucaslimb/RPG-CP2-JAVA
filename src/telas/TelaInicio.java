@@ -63,6 +63,7 @@ public class TelaInicio {
 
 	private void initialize() {
 		frmInicio = new JFrame();
+		frmInicio.setResizable(false);
 		frmInicio.getContentPane().setBackground(Color.DARK_GRAY);
 		frmInicio.getContentPane().setLayout(null);
 		frmInicio.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaInicio.class.getResource("/imagens/IconNecromante.png")));
