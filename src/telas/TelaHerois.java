@@ -100,6 +100,58 @@ public class TelaHerois {
 		labelNome3.setBounds(294, 11, 130, 21);
 		frameHerois.getContentPane().add(labelNome3);
 		
+		JLabel labelNome1 = new JLabel("...");
+		labelNome1.setBorder(null);
+		labelNome1.setVerticalAlignment(SwingConstants.TOP);
+		labelNome1.setHorizontalAlignment(SwingConstants.CENTER);
+		labelNome1.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		labelNome1.setForeground(Color.WHITE);
+		labelNome1.setBounds(10, 11, 130, 21);
+		frameHerois.getContentPane().add(labelNome1);
+		
+		JLabel labelImg1 = new JLabel("");
+		JLabel labelClasse1 = new JLabel("");
+		JLabel labelRating = new JLabel("");
+		
+		JLabel labelImg2 = new JLabel("");
+		JLabel labelClasse2 = new JLabel("");
+		JLabel labelRating2 = new JLabel("");
+		
+		JLabel labelImg3 = new JLabel("");
+		JLabel labelClasse3 = new JLabel("");
+		JLabel labelRating3 = new JLabel("");
+		
+		if(ArmazenamentoPersonagens.getPersonagens().size() > 0) {
+			labelNome1.setText(nome1);
+			
+			
+			labelImg1.setHorizontalAlignment(SwingConstants.CENTER);
+			labelImg1.setIcon(new ImageIcon(TelaHerois.class.getResource(caminhoImagem)));
+			labelImg1.setBounds(10, 36, 130, 175);
+			frameHerois.getContentPane().add(labelImg1);
+			
+			labelClasse1.setText(raca1 + " - " +classe1);
+			labelClasse1.setForeground(Color.LIGHT_GRAY);
+			labelClasse1.setFont(new Font("Papyrus", Font.PLAIN, 11));
+			labelClasse1.setHorizontalAlignment(SwingConstants.CENTER);
+			labelClasse1.setBounds(10, 215, 130, 14);
+			frameHerois.getContentPane().add(labelClasse1);
+			
+			labelRating.setText(rating1);
+			labelRating.setHorizontalAlignment(SwingConstants.CENTER);
+			labelRating.setFont(new Font("Papyrus", Font.PLAIN, 15));
+			labelRating.setBounds(10, 240, 130, 21);
+			frameHerois.getContentPane().add(labelRating);
+			
+			if(rating1 == "C")
+				labelRating.setForeground(Color.RED);
+			else if(rating1 == "B")
+				labelRating.setForeground(Color.YELLOW);
+			else
+				labelRating.setForeground(Color.GREEN);
+		}
+		
+	
 		
 		if(ArmazenamentoPersonagens.getPersonagens().size() > 1) {
 			nome2 = ArmazenamentoPersonagens.getNome(1);
@@ -125,20 +177,20 @@ public class TelaHerois {
 				caminhoImagem2 = "/imagens/necromante.png";
 			}
 			
-			JLabel labelImg2 = new JLabel("");
+			
 			labelImg2.setHorizontalAlignment(SwingConstants.CENTER);
 			labelImg2.setIcon(new ImageIcon(TelaHerois.class.getResource(caminhoImagem2)));
 			labelImg2.setBounds(150, 36, 130, 175);
 			frameHerois.getContentPane().add(labelImg2);
 			
-			JLabel labelClasse2 = new JLabel(raca2 + " - " +classe2);
+			labelClasse2.setText(raca2 + " - " +classe2);
 			labelClasse2.setForeground(Color.LIGHT_GRAY);
 			labelClasse2.setFont(new Font("Papyrus", Font.PLAIN, 11));
 			labelClasse2.setHorizontalAlignment(SwingConstants.CENTER);
 			labelClasse2.setBounds(150, 215, 130, 14);
 			frameHerois.getContentPane().add(labelClasse2);
 			
-			JLabel labelRating2 = new JLabel(rating2);
+			labelRating2.setText(rating2);
 			labelRating2.setHorizontalAlignment(SwingConstants.CENTER);
 			labelRating2.setFont(new Font("Papyrus", Font.PLAIN, 15));
 			labelRating2.setBounds(150, 240, 130, 21);
@@ -151,6 +203,7 @@ public class TelaHerois {
 			else
 				labelRating2.setForeground(Color.GREEN);
 		}
+			
 		if(ArmazenamentoPersonagens.getPersonagens().size() > 2) {
 			nome3 = ArmazenamentoPersonagens.getNome(2);
 			classe3 = ArmazenamentoPersonagens.getClasse(2);
@@ -175,20 +228,20 @@ public class TelaHerois {
 				caminhoImagem3 = "/imagens/necromante.png";
 			}
 			
-			JLabel labelImg3 = new JLabel("");
+			
 			labelImg3.setHorizontalAlignment(SwingConstants.CENTER);
 			labelImg3.setIcon(new ImageIcon(TelaHerois.class.getResource(caminhoImagem3)));
 			labelImg3.setBounds(294, 36, 130, 175);
 			frameHerois.getContentPane().add(labelImg3);
 			
-			JLabel labelClasse3 = new JLabel(raca3 + " - " +classe3);
+			labelClasse3.setText(raca3 + " - " +classe3);
 			labelClasse3.setForeground(Color.LIGHT_GRAY);
 			labelClasse3.setFont(new Font("Papyrus", Font.PLAIN, 11));
 			labelClasse3.setHorizontalAlignment(SwingConstants.CENTER);
 			labelClasse3.setBounds(294, 215, 130, 14);
 			frameHerois.getContentPane().add(labelClasse3);
 			
-			JLabel labelRating3 = new JLabel(rating3);
+			labelRating3.setText(rating3);
 			labelRating3.setFont(new Font("Papyrus", Font.PLAIN, 15));
 			labelRating3.setHorizontalAlignment(SwingConstants.CENTER);
 			labelRating3.setBounds(294, 240, 130, 21);
@@ -202,40 +255,7 @@ public class TelaHerois {
 				labelRating3.setForeground(Color.GREEN);
 		}
 		
-		JLabel labelNome1 = new JLabel(nome1);
-		labelNome1.setBorder(null);
-		labelNome1.setVerticalAlignment(SwingConstants.TOP);
-		labelNome1.setHorizontalAlignment(SwingConstants.CENTER);
-		labelNome1.setFont(new Font("Papyrus", Font.PLAIN, 15));
-		labelNome1.setForeground(Color.WHITE);
-		labelNome1.setBounds(10, 11, 130, 21);
-		frameHerois.getContentPane().add(labelNome1);
 		
-		JLabel labelImg1 = new JLabel("");
-		labelImg1.setHorizontalAlignment(SwingConstants.CENTER);
-		labelImg1.setIcon(new ImageIcon(TelaHerois.class.getResource(caminhoImagem)));
-		labelImg1.setBounds(10, 36, 130, 175);
-		frameHerois.getContentPane().add(labelImg1);
-		
-		JLabel labelClasse1 = new JLabel(raca1 + " - " +classe1);
-		labelClasse1.setForeground(Color.LIGHT_GRAY);
-		labelClasse1.setFont(new Font("Papyrus", Font.PLAIN, 11));
-		labelClasse1.setHorizontalAlignment(SwingConstants.CENTER);
-		labelClasse1.setBounds(10, 215, 130, 14);
-		frameHerois.getContentPane().add(labelClasse1);
-		
-		JLabel labelRating = new JLabel(rating1);
-		labelRating.setHorizontalAlignment(SwingConstants.CENTER);
-		labelRating.setFont(new Font("Papyrus", Font.PLAIN, 15));
-		labelRating.setBounds(10, 240, 130, 21);
-		frameHerois.getContentPane().add(labelRating);
-		
-		if(rating1 == "C")
-			labelRating.setForeground(Color.RED);
-		else if(rating1 == "B")
-			labelRating.setForeground(Color.YELLOW);
-		else
-			labelRating.setForeground(Color.GREEN);
 		
 		
 		
@@ -245,7 +265,7 @@ public class TelaHerois {
 		btnCriarNovo.setFont(new Font("Papyrus", Font.BOLD, 12));
 		btnCriarNovo.setBorder(null);
 		btnCriarNovo.setBackground(Color.LIGHT_GRAY);
-		btnCriarNovo.setBounds(10, 277, 270, 23);
+		btnCriarNovo.setBounds(150, 277, 134, 23);
 		frameHerois.getContentPane().add(btnCriarNovo);
 		
 		if(ArmazenamentoPersonagens.getPersonagens().size() == 3)
@@ -266,6 +286,15 @@ public class TelaHerois {
 		btnSair.setBackground(Color.LIGHT_GRAY);
 		btnSair.setBounds(294, 277, 130, 23);
 		frameHerois.getContentPane().add(btnSair);
+		
+		JButton btnLimpar = new JButton("Limpar");
+		btnLimpar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnLimpar.setForeground(Color.BLACK);
+		btnLimpar.setFont(new Font("Papyrus", Font.BOLD, 12));
+		btnLimpar.setBorder(null);
+		btnLimpar.setBackground(Color.LIGHT_GRAY);
+		btnLimpar.setBounds(10, 277, 130, 23);
+		frameHerois.getContentPane().add(btnLimpar);
 
 		btnSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -273,5 +302,29 @@ public class TelaHerois {
 			}
 		});
 
+
+		btnLimpar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+						ArmazenamentoPersonagens.limparPersonagens();
+						btnCriarNovo.setEnabled(true);
+						
+						labelNome1.setText("...");
+						labelImg1.setVisible(false);
+						labelClasse1.setText("");
+						labelRating.setText("");
+						
+						labelNome2.setText("...");
+						labelImg2.setVisible(false);
+						labelClasse2.setText("");
+						labelRating2.setText("");
+						
+						labelNome3.setText("...");
+						labelImg3.setVisible(false);
+						labelClasse3.setText("");
+						labelRating3.setText("");
+			}
+		});
+		
+		
 	}
 }
